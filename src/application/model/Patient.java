@@ -88,4 +88,7 @@ public class Patient {
 	public String getPassword() {
 		return this.password;
 	}
+	public void setPassowrd(String password) {
+		this.password = password;
+	}
 }

@@ -2,6 +2,8 @@ package application.controllers;
 
 import application.JsonUtil;
 import application.Main;
+import application.model.Doctor;
+import application.model.Nurse;
 import javafx.event.ActionEvent;
 
 import javafx.fxml.FXML;
@@ -33,34 +35,27 @@ public class LoginController {
 		String username = tfUsername.getText();
 		String password = tfPassword.getText();
 		//Get user type
-//		String type = getUserType(username);
-//		if(type == ""){
-//			//User is not registered, give them an error and have them try again
-//			System.out.println("User is not registered");
-//		}else{
-//			//ValidatePassword
-//			boolean allGood = validatePassword(username, password, type);
-//			if(allGood){
-//				//Get next scene destination based on user type
-//				String destinationfxml = getUserDestination(type);
-//				//Switch to scene
-//				switchToScene(e, destinationfxml);
-//			}else{
-//				System.out.println("Invalid Password");
-//			}
-//		}
-		switchToScene(e, "doctor_evaluation.fxml");
+		String type = getUserType(username);
+		if(Objects.equals(type, "")){
+			//User is not registered, give them an error and have them try again
+			System.out.println("User is not registered");
+		}else{
+			//ValidatePassword
+			boolean allGood = validatePassword(username, password, type);
+			if(allGood){
+				//Get next scene destination based on user type
+				String destinationfxml = getUserDestination(type);
+				//Switch to scene
+				switchToScene(e, destinationfxml);
+			}else{
+				System.out.println("Invalid Password");
+			}
+		}
 	}
 
 	private boolean validatePassword(String username, String password, String type){
 		boolean validated = false;
 		switch (type) {
-			case ("doctor"): {
-				break;
-			}
-			case ("nurse"): {
-				break;
-			}
 			case ("patient"):{
 				Patient patient = util.getPatientObjFromJson(username);
 				if(Objects.equals(patient.getPassword(), password)){
@@ -68,13 +63,27 @@ public class LoginController {
 				}
 				break;
 			}
+			case ("doctor"): {
+				Doctor doctor = util.getDoctorObjFromJson(username);
+				if(Objects.equals(doctor.getPassword(), password)){
+					validated = true;
+				}
+				break;
+			}
+			case ("nurse"): {
+				Nurse nurse = util.getNurseObjFromJson(username);
+				if(Objects.equals(nurse.getPassword(), password)){
+					validated = true;
+				}
+				break;
+			}
+
 			default: {
 				System.out.println("Error validating the password");
 				break;
 			}
 		}
-		//Nurse nurse = util.getNurseObjFromJson(username);
-		return true;
+		return validated;
 	}
 
 	private String getUserDestination(String type){
@@ -82,11 +91,11 @@ public class LoginController {
 
 		switch (type) {
 			case ("doctor"): {
-				destination = "patient_registration.fxml";
+				destination = "doctor_evaluation.fxml";
 				break;
 			}
 			case ("nurse"): {
-				destination = "patient_registration.fxml";
+				destination = "pick_patient.fxml";
 				break;
 			}
 			case ("patient"): {
@@ -107,20 +116,21 @@ public class LoginController {
 		ArrayList<String> doctorNames = util.getDoctorNames();
 		ArrayList<String> nurseNames = util.getNurseNames();
 		ArrayList<String> patientNames = util.getPatientNames();
+
 		//check if present in any of the arrays
-		for(int i = 0; i < doctorNames.size() - 1; i++){
+		for(int i = 0; i <= doctorNames.size() - 1; i++){
 			if (Objects.equals(doctorNames.get(i), username)){
 				type = "doctor";
 				break;
 			}
 		}
-		for(int i = 0; i < nurseNames.size() - 1; i++){
+		for(int i = 0; i <= nurseNames.size() - 1; i++){
 			if (Objects.equals(nurseNames.get(i), username)){
 				type = "nurse";
 				break;
 			}
 		}
-		for(int i = 0; i < patientNames.size() - 1; i++){
+		for(int i = 0; i <= patientNames.size() - 1; i++){
 			if (Objects.equals(patientNames.get(i), username)){
 				type = "patient";
 				break;

@@ -1,10 +1,11 @@
 {
-  "firstName": "Logan",
-  "lastName": "Patterson",
+  "firstName": "Michael",
+  "lastName": "Dommer",
   "dateOfBirth": 84848348383,
   "phoneNumber": "9493939292",
+  "emailAddress": "MichaelDommer@gmail.com",
   "address": "1350 S Higley Mesa AZ 85306",
-  "password": "password",
+  "password": "SomePass4321",
   "previousVisits": [
     232323232323
   ],

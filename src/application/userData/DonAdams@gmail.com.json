@@ -1,8 +1,9 @@
 {
-  "firstName": "Logan",
-  "lastName": "Patterson",
+  "firstName": "Don",
+  "lastName": "Adams",
   "dateOfBirth": 84848348383,
   "phoneNumber": "9493939292",
+  "emailAddress": "DonAdams@gmail.com",
   "address": "1350 S Higley Mesa AZ 85306",
   "password": "password",
   "previousVisits": [

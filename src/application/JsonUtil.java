@@ -23,16 +23,72 @@ import com.google.gson.reflect.TypeToken;
  */
 public class JsonUtil {
 	
-	private String patientUrl;
+	private String userUrl;
 	private String baseUrl;
+	private String ext;
 	private Gson gson;
 	private Gson gsonPretty;
 	
 	public JsonUtil() {
-		patientUrl = System.getProperty("user.dir") + "src/application/patientdata/";
+		ext = ".json";
+		userUrl = System.getProperty("user.dir") + "/src/application/userData/";
 		baseUrl = System.getProperty("user.dir") + "/src/application/";
 		gson = new Gson();
 		gsonPretty = new GsonBuilder().setPrettyPrinting().create();
+	}
+	
+	public Doctor getDoctorObjFromJson(String filename) {
+		try {
+			Reader reader = new FileReader(userUrl + filename + ext);
+			Doctor doctor = gson.fromJson(reader, Doctor.class);
+			reader.close();
+			return doctor;
+		} catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("Problem reading Doctor data, returning empty doctor");
+			return new Doctor();
+		}
+	}
+	
+	public boolean writeDoctorObjToJson(Doctor doc, String filename) {
+		try {
+			String url = userUrl + filename + ext;
+			FileWriter writer = new FileWriter(url);
+			gsonPretty.toJson(doc, writer);
+			writer.flush();
+			writer.close();
+			return true;
+		}catch(IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	public Nurse getNurseObjFromJson(String filename) {
+		try {
+			Reader reader = new FileReader(userUrl + filename + ext);
+			Nurse nurse = gson.fromJson(reader, Nurse.class);
+			reader.close();
+			return nurse;
+		} catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("Problem reading Doctor data, returning empty doctor");
+			return new Nurse();
+		}
+	}
+	
+	public boolean writeNurseObjToJson(Nurse nurse, String filename) {
+		try {
+			String url = userUrl + filename + ext;
+			FileWriter writer = new FileWriter(url);
+			gsonPretty.toJson(nurse, writer);
+			writer.flush();
+			writer.close();
+			return true;
+		}catch(IOException e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 	
 	/**
@@ -42,7 +98,7 @@ public class JsonUtil {
 	 */
 	public Patient getPatientObjFromJson(String filename) {
 		try {
-			Reader reader = new FileReader(patientUrl + filename);
+			Reader reader = new FileReader(userUrl + filename + ext);
 			Patient patient = gson.fromJson(reader, Patient.class);
 			reader.close();
 			return patient;
@@ -62,7 +118,7 @@ public class JsonUtil {
 	 */
 	public boolean writePatientToJsonFile(Patient patient, String filename) {
 		try {
-			String url = patientUrl + filename + ".json";
+			String url = userUrl + filename + ext;
 			FileWriter writer = new FileWriter(url);
 			gsonPretty.toJson(patient, writer);
 			writer.flush();
@@ -135,10 +191,10 @@ public class JsonUtil {
 			Type type = new TypeToken<ArrayList<String>>(){}.getType();
 			names = gson.fromJson(arr, type);
 		} catch (FileNotFoundException e) {
-			System.out.println("Could not get doctor names");
+			System.out.println("Could not get patient names");
 			e.printStackTrace();
 		} catch (IOException e) {
-			System.out.println("Issue Reading userRegistry file for doctors");
+			System.out.println("Issue Reading userRegistry file for patients");
 			e.printStackTrace();
 		} catch(Exception e) {
 			e.printStackTrace();
