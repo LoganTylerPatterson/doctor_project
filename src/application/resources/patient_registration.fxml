@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar prefWidth="800.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Home">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="My Profile" />
+                        <MenuItem mnemonicParsing="false" text="My Medical History" />
+                     </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Appointment">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Schedule Appointment" />
+                        <MenuItem mnemonicParsing="false" text="Appointment History" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Messages">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Send Message" />
+                        <MenuItem mnemonicParsing="false" text="Message History" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <HBox prefHeight="300.0" prefWidth="200.0">
+               <children>
+                  <StackPane prefHeight="150.0" prefWidth="450.0">
+                     <children>
+                        <Rectangle arcHeight="30.0" arcWidth="45.0" fill="#f2fcff" height="240.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="400.0" />
+                        <Label text="My Basic Information               USER ID: jasdoe111191">
+                           <StackPane.margin>
+                              <Insets bottom="200.0" />
+                           </StackPane.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="Name">
+                           <StackPane.margin>
+                              <Insets bottom="135.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="Date of Birth">
+                           <StackPane.margin>
+                              <Insets bottom="70.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="Primary Phone">
+                           <StackPane.margin>
+                              <Insets bottom="-70.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Line endX="100.0" startX="-300.15606689453125" startY="0.2928779721260071">
+                           <StackPane.margin>
+                              <Insets bottom="170.0" />
+                           </StackPane.margin>
+                        </Line>
+                        <Line endX="100.0" startX="-300.15606689453125" startY="0.2928779721260071">
+                           <StackPane.margin>
+                              <Insets bottom="100.0" />
+                           </StackPane.margin>
+                        </Line>
+                        <Line endX="100.0" startX="-300.15606689453125" startY="0.2928779721260071">
+                           <StackPane.margin>
+                              <Insets bottom="30.0" />
+                           </StackPane.margin>
+                        </Line>
+                        <Line endX="100.0" startX="-300.15606689453125" startY="0.2928779721260071">
+                           <StackPane.margin>
+                              <Insets bottom="-40.0" />
+                           </StackPane.margin>
+                        </Line>
+                        <Line endX="100.0" startX="-300.15606689453125" startY="0.2928779721260071">
+                           <StackPane.margin>
+                              <Insets bottom="-110.0" />
+                           </StackPane.margin>
+                        </Line>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="Address">
+                           <StackPane.margin>
+                              <Insets bottom="-135.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="Assigned Doctor">
+                           <StackPane.margin>
+                              <Insets bottom="-5.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Button mnemonicParsing="false" text="Edit">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                           <StackPane.margin>
+                              <Insets bottom="5.0" right="250.0" top="140.0" />
+                           </StackPane.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" text="Edit">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                           <StackPane.margin>
+                              <Insets bottom="-70.0" right="180.0" />
+                           </StackPane.margin>
+                        </Button>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="Jasper James Doe">
+                           <StackPane.margin>
+                              <Insets bottom="135.0" left="250.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="11/11/1991">
+                           <StackPane.margin>
+                              <Insets bottom="70.0" left="250.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="Dr. Jane Doe">
+                           <StackPane.margin>
+                              <Insets left="250.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="602-602-6022">
+                           <StackPane.margin>
+                              <Insets bottom="-70.0" left="250.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="1920 N Elm Ln.">
+                           <StackPane.margin>
+                              <Insets left="250.0" top="135.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="UNIT 110">
+                           <StackPane.margin>
+                              <Insets left="250.0" top="165.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="City, AZ 89137">
+                           <StackPane.margin>
+                              <Insets left="250.0" top="195.0" />
+                           </StackPane.margin>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                     </padding>
+                  </StackPane>
+                  <StackPane prefHeight="150.0" prefWidth="450.0">
+                     <children>
+                        <Rectangle arcHeight="30.0" arcWidth="45.0" fill="#f2fcff" height="240.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="400.0" />
+                        <Label text="Pharmacy/Insurance Information">
+                           <StackPane.margin>
+                              <Insets bottom="200.0" />
+                           </StackPane.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="Pharmacy Name">
+                           <StackPane.margin>
+                              <Insets bottom="135.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="Pharmacy Address">
+                           <StackPane.margin>
+                              <Insets bottom="70.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="Insurance Policy Number">
+                           <StackPane.margin>
+                              <Insets bottom="-70.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Line endX="100.0" startX="-300.15606689453125" startY="0.2928779721260071">
+                           <StackPane.margin>
+                              <Insets bottom="170.0" />
+                           </StackPane.margin>
+                        </Line>
+                        <Line endX="100.0" startX="-300.15606689453125" startY="0.2928779721260071">
+                           <StackPane.margin>
+                              <Insets bottom="100.0" />
+                           </StackPane.margin>
+                        </Line>
+                        <Line endX="100.0" startX="-300.15606689453125" startY="0.2928779721260071">
+                           <StackPane.margin>
+                              <Insets bottom="30.0" />
+                           </StackPane.margin>
+                        </Line>
+                        <Line endX="100.0" startX="-300.15606689453125" startY="0.2928779721260071">
+                           <StackPane.margin>
+                              <Insets bottom="-40.0" />
+                           </StackPane.margin>
+                        </Line>
+                        <Line endX="100.0" startX="-300.15606689453125" startY="0.2928779721260071">
+                           <StackPane.margin>
+                              <Insets bottom="-110.0" />
+                           </StackPane.margin>
+                        </Line>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="Insurance Address">
+                           <StackPane.margin>
+                              <Insets bottom="-135.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="Insurance Name">
+                           <StackPane.margin>
+                              <Insets bottom="-5.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Button mnemonicParsing="false" text="Edit">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                           <StackPane.margin>
+                              <Insets bottom="200.0" left="290.0" />
+                           </StackPane.margin>
+                        </Button>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="CVS">
+                           <StackPane.margin>
+                              <Insets bottom="135.0" left="250.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="521 E Medical Rd">
+                           <StackPane.margin>
+                              <Insets bottom="80.0" left="250.0" />
+                           </StackPane.margin>
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="Dr. Jane Doe">
+                           <StackPane.margin>
+                              <Insets left="250.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="199-4346-0937">
+                           <StackPane.margin>
+                              <Insets bottom="-70.0" left="250.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="4136 N 11th St">
+                           <StackPane.margin>
+                              <Insets left="250.0" top="135.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="SUIT 109">
+                           <StackPane.margin>
+                              <Insets left="250.0" top="165.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="Towny, NY 10097">
+                           <StackPane.margin>
+                              <Insets left="250.0" top="195.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="City, AZ 89191">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                           <StackPane.margin>
+                              <Insets bottom="50.0" left="250.0" />
+                           </StackPane.margin>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                     </padding>
+                  </StackPane>
+               </children>
+            </HBox>
+            <HBox prefHeight="300.0" prefWidth="200.0">
+               <children>
+                  <StackPane prefHeight="150.0" prefWidth="450.0">
+                     <children>
+                        <Rectangle arcHeight="30.0" arcWidth="45.0" fill="#f2fcff" height="240.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="400.0" />
+                        <Label text="Current Prescribed Medications">
+                           <StackPane.margin>
+                              <Insets bottom="200.0" right="80.0" />
+                           </StackPane.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="ACETOMETAPHIN 700mg (1 tablet/day) Date: 03/24/2021">
+                           <StackPane.margin>
+                              <Insets bottom="135.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="METPHORMIN 200mg (2 tablet/day) Date: 11/21/2020">
+                           <StackPane.margin>
+                              <Insets bottom="70.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="PRIMALERONOXIN 100mg (1 tablet/day) Date: 02/20/2020">
+                           <StackPane.margin>
+                              <Insets bottom="-70.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Line endX="100.0" startX="-300.15606689453125" startY="0.2928779721260071">
+                           <StackPane.margin>
+                              <Insets bottom="170.0" />
+                           </StackPane.margin>
+                        </Line>
+                        <Line endX="100.0" startX="-300.15606689453125" startY="0.2928779721260071">
+                           <StackPane.margin>
+                              <Insets bottom="100.0" />
+                           </StackPane.margin>
+                        </Line>
+                        <Line endX="100.0" startX="-300.15606689453125" startY="0.2928779721260071">
+                           <StackPane.margin>
+                              <Insets bottom="30.0" />
+                           </StackPane.margin>
+                        </Line>
+                        <Line endX="100.0" startX="-300.15606689453125" startY="0.2928779721260071">
+                           <StackPane.margin>
+                              <Insets bottom="-40.0" />
+                           </StackPane.margin>
+                        </Line>
+                        <Line endX="100.0" startX="-300.15606689453125" startY="0.2928779721260071">
+                           <StackPane.margin>
+                              <Insets bottom="-110.0" />
+                           </StackPane.margin>
+                        </Line>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="FLUTICASONE NASAL SPRAY 700mg (1 tablet/day) Date:  10/10/2019">
+                           <StackPane.margin>
+                              <Insets bottom="-135.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="388.0" text="LOSADONIN 300mg (1 tablet/day) Date: 05/11/2020">
+                           <StackPane.margin>
+                              <Insets bottom="-5.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Button mnemonicParsing="false" text="View All Medications">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                           <StackPane.margin>
+                              <Insets bottom="200.0" left="275.0" />
+                           </StackPane.margin>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                     </padding>
+                  </StackPane>
+                  <StackPane prefHeight="150.0" prefWidth="450.0">
+                     <children>
+                        <Rectangle arcHeight="30.0" arcWidth="45.0" fill="#f2fcff" height="240.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="400.0" />
+                        <Label text="Last 5 Visits">
+                           <StackPane.margin>
+                              <Insets bottom="200.0" />
+                           </StackPane.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="70.0" text="03/04/2021">
+                           <StackPane.margin>
+                              <Insets bottom="135.0" right="320.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="70.0" text="11/21/2020">
+                           <StackPane.margin>
+                              <Insets bottom="70.0" right="320.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="70.0" text="02/20/2020">
+                           <StackPane.margin>
+                              <Insets bottom="-70.0" right="320.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Line endX="100.0" startX="-300.15606689453125" startY="0.2928779721260071">
+                           <StackPane.margin>
+                              <Insets bottom="170.0" />
+                           </StackPane.margin>
+                        </Line>
+                        <Line endX="100.0" startX="-300.15606689453125" startY="0.2928779721260071">
+                           <StackPane.margin>
+                              <Insets bottom="100.0" />
+                           </StackPane.margin>
+                        </Line>
+                        <Line endX="100.0" startX="-300.15606689453125" startY="0.2928779721260071">
+                           <StackPane.margin>
+                              <Insets bottom="30.0" />
+                           </StackPane.margin>
+                        </Line>
+                        <Line endX="100.0" startX="-300.15606689453125" startY="0.2928779721260071">
+                           <StackPane.margin>
+                              <Insets bottom="-40.0" />
+                           </StackPane.margin>
+                        </Line>
+                        <Line endX="100.0" startX="-300.15606689453125" startY="0.2928779721260071">
+                           <StackPane.margin>
+                              <Insets bottom="-110.0" />
+                           </StackPane.margin>
+                        </Line>
+                        <Label prefHeight="17.0" prefWidth="70.0" text="10/10/2019">
+                           <StackPane.margin>
+                              <Insets bottom="-135.0" right="320.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="70.0" text="05/11/2020">
+                           <StackPane.margin>
+                              <Insets bottom="-5.0" right="320.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Button mnemonicParsing="false" text="Click to View">
+                           <StackPane.margin>
+                              <Insets bottom="135.0" left="10.0" right="150.0" />
+                           </StackPane.margin>
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" text="Click to View">
+                           <StackPane.margin>
+                              <Insets bottom="65.0" left="10.0" right="150.0" />
+                           </StackPane.margin>
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" text="Click to View">
+                           <StackPane.margin>
+                              <Insets bottom="-5.0" left="10.0" right="150.0" />
+                           </StackPane.margin>
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" text="Click to View">
+                           <StackPane.margin>
+                              <Insets bottom="-75.0" left="10.0" right="150.0" />
+                           </StackPane.margin>
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" text="Click to View">
+                           <StackPane.margin>
+                              <Insets bottom="-145.0" left="10.0" right="150.0" />
+                           </StackPane.margin>
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <Label prefHeight="17.0" prefWidth="148.0" text="W/ Dr. Jane Johnson">
+                           <StackPane.margin>
+                              <Insets bottom="135.0" left="250.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="148.0" text="W/ Dr. Jane Johnson">
+                           <StackPane.margin>
+                              <Insets bottom="65.0" left="250.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="148.0" text="W/ Dr. Jane Johnson">
+                           <StackPane.margin>
+                              <Insets bottom="-5.0" left="250.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="148.0" text="W/ Dr. Jane Johnson">
+                           <StackPane.margin>
+                              <Insets bottom="-75.0" left="250.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="148.0" text="W/ Dr. Jane Johnson">
+                           <StackPane.margin>
+                              <Insets bottom="-145.0" left="250.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Button mnemonicParsing="false" text="View Visit History">
+                           <StackPane.margin>
+                              <Insets bottom="205.0" left="205.0" />
+                           </StackPane.margin>
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                     </padding>
+                  </StackPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

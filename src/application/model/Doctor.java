@@ -2,7 +2,7 @@ package application.model;
 
 import java.util.ArrayList;
 
-public class Doctor {
+public class Doctor extends User{
 	private String firstName;
 	private String lastName;
 	private String userName;
@@ -11,10 +11,11 @@ public class Doctor {
 	private String phoneNumber;
 	private String address;
 	private ArrayList<Long> upcomingAppts;
-	private ArrayList<Patient> patients;
+	private ArrayList<String> patients;
+	private String role;
 	
 	public Doctor(String firstName, String lastName, String userName, String password, String emailAddress, String phoneNumber, String address,
-			ArrayList<Long> upcomingAppts, ArrayList<Patient> patients) {
+			ArrayList<Long> upcomingAppts, ArrayList<String> patients, String role) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -25,10 +26,18 @@ public class Doctor {
 		this.address = address;
 		this.upcomingAppts = upcomingAppts;
 		this.patients = patients;
+		this.role = role;
 	}
 
 	public Doctor() {
 		
+	}
+
+	public String getRole(){
+		return role;
+	}
+	public void setRole(String role){
+		this.role = role;
 	}
 	public String getEmailAddress() {
 		return emailAddress;
@@ -36,7 +45,6 @@ public class Doctor {
 	public void setEmailAddress(String emailAddress) {
 		this.emailAddress = emailAddress;
 	}
-	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -79,10 +87,10 @@ public class Doctor {
 	public void setUpcomingAppts(ArrayList<Long> upcomingAppts) {
 		this.upcomingAppts = upcomingAppts;
 	}
-	public ArrayList<Patient> getPatients() {
+	public ArrayList<String> getPatients() {
 		return patients;
 	}
-	public void setPatients(ArrayList<Patient> patients) {
+	public void setPatients(ArrayList<String> patients) {
 		this.patients = patients;
 	}
 }

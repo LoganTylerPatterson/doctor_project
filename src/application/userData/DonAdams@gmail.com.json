@@ -1,30 +1,16 @@
 {
   "firstName": "Don",
   "lastName": "Adams",
-  "dateOfBirth": 84848348383,
-  "phoneNumber": "9493939292",
+  "userName": "DonAdams@gmail.com",
+  "password": "SomePass4321",
   "emailAddress": "DonAdams@gmail.com",
+  "phoneNumber": "9493939292",
   "address": "1350 S Higley Mesa AZ 85306",
-  "password": "password",
-  "previousVisits": [
+  "upcomingAppts": [
     232323232323
   ],
-  "currentMedications": [
-    {
-      "name": "Advil",
-      "dosage": 500,
-      "unit": "mg"
-    }
+  "patients": [
+    "MichaelDommer@gmail.com"
   ],
-  "insurance": {
-    "primaryHolder": "Logan Patterson",
-    "name": "Blue Cross Blue Shield",
-    "number": 92929292,
-    "address": "1345 N Jefferson Phoenix AZ 849383"
-  },
-  "pharmacy": {
-    "name": "CVS",
-    "address": "502 S Address here AZ ######",
-    "phoneNumber": "9483838383"
-  }
+  "role": "doctor"
 }

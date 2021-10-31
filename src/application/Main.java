@@ -1,7 +1,10 @@
 package application;
 	
+import application.controllers.PickPatientController;
+import application.model.User;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
 import javafx.scene.Node;
@@ -13,7 +16,7 @@ import java.io.IOException;
 
 
 public class Main extends Application {
-	//Note to know this is the good one
+		public static Main instance;
 
 		@Override
 		public void start(Stage primaryStage) {
@@ -28,7 +31,13 @@ public class Main extends Application {
 			}
 		}
 
-	public void switchToSceneX(ActionEvent event, String fxmlName){
+	/**
+	 * This function is used to switch to a specific Scene and pass along some user data with it
+	 * @param event event passed in from an event listener like a Button
+	 * @param fxmlName name of the file to be switched to, ie patient_registration.fxml
+	 * @param user User object passed to the scene
+	 */
+	public void switchToSceneWithUser(ActionEvent event, String fxmlName, User user){
 		Stage stage;
 		Parent root;
 		FXMLLoader loader;
@@ -39,27 +48,42 @@ public class Main extends Application {
 			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 			scene = new Scene(root);
 			stage.setScene(scene);
+			stage.setUserData(user);
 			stage.show();
 		} catch(IOException e) {
-			System.out.println("Could not transfer to scene " + fxmlName);
+			System.out.println("switchToSceneWithUser(): Could not transfer to scene " + fxmlName);
 			e.printStackTrace();
 		}
+	}
 
+	/**
+	 * Switches to a scene without requiring user data to be set, called from other classes
+	 * @param e actionEvent passed from FXML widget
+	 */
+	public void switchToPickerScene(ActionEvent e, User user){
+		JsonUtil util = new JsonUtil();
+		Stage stage;
+		Parent root;
+		FXMLLoader loader;
+		Scene scene;
+		try{
+			loader = new FXMLLoader(getClass().getResource("ui/pick_patient.fxml"));
+			root = loader.load();
+			//Pass data to controller
+			PickPatientController controller = loader.getController();
+			controller.setUser(user);
+			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.setUserData(user);
+			stage.show();
+		} catch(IOException ex) {
+			System.out.println("switchToSceneWithUser(): Could not transfer to scene pick_patient.fxml");
+			ex.printStackTrace();
+		}
 	}
 	
 	public static void main(String[] args) {
-		launch(args);
+			launch(args);
 	}
 }
-//ArrayList<Long> visits= new ArrayList<Long>();
-//ArrayList<Medication> medications = new ArrayList<Medication>();
-//medications.add(new Medication("Advil", 500, "mg"));
-//Insurance insurance = new Insurance("Logan Patterson", "Blue Cross Blue Shield", 92929292L,"1345 N Jefferson Phoenix AZ 849383" );
-//Pharmacy pharmacy = new Pharmacy("CVS", "502 S Address here AZ ######", "9483838383");
-//visits.add(232323232323l);
-//long dob = 9080238028932l;
-//String phoneNumber = "9283928392";
-//String address = "1345 N Jefferson Phoenix AZ 849383";
-//Patient test = new Patient("Logan", "Patterson", 84848348383l,"9493939292","1350 S Higley Mesa AZ 85306", visits, medications, insurance, pharmacy);
-//
-//util.writePatientToJsonFile(test, "test");

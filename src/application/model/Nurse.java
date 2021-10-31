@@ -2,17 +2,18 @@ package application.model;
 
 import java.util.ArrayList;
 
-public class Nurse {
+public class Nurse extends User{
 	private String firstName;
 	private String lastName;
 	private String password;
 	private String phoneNumber;
 	private String address;
 	private ArrayList<Patient> patients;
+	private String role;
 	
 	public Nurse() {}
 	public Nurse(String firstName, String lastName, String password, String phoneNumber, String address,
-			ArrayList<Patient> patients) {
+			ArrayList<Patient> patients, String role) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -20,6 +21,13 @@ public class Nurse {
 		this.phoneNumber = phoneNumber;
 		this.address = address;
 		this.patients = patients;
+		this.role = role;
+	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
 	}
 	public String getFirstName() {
 		return firstName;

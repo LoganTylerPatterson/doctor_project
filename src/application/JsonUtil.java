@@ -24,7 +24,7 @@ import com.google.gson.reflect.TypeToken;
 public class JsonUtil {
 	
 	private String userUrl;
-	private String baseUrl;
+	public String baseUrl;
 	private String ext;
 	private Gson gson;
 	private Gson gsonPretty;
@@ -45,7 +45,7 @@ public class JsonUtil {
 			return doctor;
 		} catch(Exception e) {
 			e.printStackTrace();
-			System.out.println("Problem reading Doctor data, returning empty doctor");
+			System.out.println("Problem reading Doctor " + filename + ", returning empty doctor");
 			return new Doctor();
 		}
 	}

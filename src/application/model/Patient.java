@@ -2,12 +2,12 @@ package application.model;
 import java.util.*;
 //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
 
-public class Patient {
+public class Patient extends User{
 	private String firstName;
 	private String lastName;
 	private long dateOfBirth;
 	private Evaluation evaluation;
-	//private Doctor assignedDoctor;
+	private Doctor assignedDoctor;
 	private String phoneNumber;
 	private String address;
 	private ArrayList<Long> previousVisits;
@@ -15,20 +15,42 @@ public class Patient {
 	private Insurance insurance;
 	private Pharmacy pharmacy;
 	private String password;
+
 	public Patient() {}
-	public Patient(String firstName, String lastName, long dateOfBirth, Evaluation evaluation, String phoneNumber, String address,
+	public Patient(String firstName, String lastName, long dateOfBirth, Evaluation evaluation, Doctor doctor, String phoneNumber, String address,
 			ArrayList<Long> previousVisits, ArrayList<Medication> currentMedications, Insurance insurance,
 			Pharmacy pharmacy, String password) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.dateOfBirth = dateOfBirth;
+		this.evaluation = evaluation;
+		this.assignedDoctor = doctor;
 		this.phoneNumber = phoneNumber;
 		this.address = address;
 		this.previousVisits = previousVisits;
 		this.currentMedications = currentMedications;
 		this.insurance = insurance;
 		this.pharmacy = pharmacy;
+	}
+	public Evaluation getEvaluation() {
+		return evaluation;
+	}
+
+	public void setEvaluation(Evaluation evaluation) {
+		this.evaluation = evaluation;
+	}
+
+	public Doctor getAssignedDoctor() {
+		return assignedDoctor;
+	}
+
+	public void setAssignedDoctor(Doctor assignedDoctor) {
+		this.assignedDoctor = assignedDoctor;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	public String getFirstName() {
 		return firstName;

@@ -1,0 +1,11 @@
+{
+  "firstName": "Ratchet",
+  "lastName": "Greene",
+  "password": "IAmANurse",
+  "emailAddress": "RatchetGreene",
+  "phoneNumber": "4356853930",
+  "address": "1350 S Higley Mesa AZ 85306",
+  "patients": [
+    "MichaelDommer@gmail.com"
+  ]
+}

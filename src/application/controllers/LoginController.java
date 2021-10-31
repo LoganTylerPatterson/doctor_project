@@ -4,16 +4,25 @@ import application.JsonUtil;
 import application.Main;
 import application.model.Doctor;
 import application.model.Nurse;
+import application.model.User;
 import javafx.event.ActionEvent;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
+import java.net.URI;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
 
 import application.model.Patient;
+import javafx.stage.Stage;
 
 public class LoginController {
 	@FXML
@@ -25,17 +34,31 @@ public class LoginController {
 	@FXML
 	public TextField tfPassword;
 
+	private User user;
+
 	private JsonUtil util;
 
+	/**
+	 * Called after the constructor, can be used to manipulate FXML widgets
+	 * In this case just initializes the JSONUtil class
+	 */
 	public void initialize(){
 		util = new JsonUtil();
 	}
 
+	/**
+	 * Called when btnLogin is clicked, see @login.fxml, begins the process of validating the user
+	 * and determining the correct destination
+	 * @param e
+	 */
 	public void loginUser(ActionEvent e) {
+		//Retrieve user input
 		String username = tfUsername.getText();
 		String password = tfPassword.getText();
-		//Get user type
+
+		//Get user role
 		String type = getUserType(username);
+
 		if(Objects.equals(type, "")){
 			//User is not registered, give them an error and have them try again
 			System.out.println("User is not registered");
@@ -43,21 +66,34 @@ public class LoginController {
 			//ValidatePassword
 			boolean allGood = validatePassword(username, password, type);
 			if(allGood){
-				//Get next scene destination based on user type
+				//Get next scene
 				String destinationfxml = getUserDestination(type);
 				//Switch to scene
-				switchToScene(e, destinationfxml);
+				if(Objects.equals(destinationfxml, "pick_patient.fxml")){
+					switchToPickerScene(e, user);
+				}else{
+					//switchToPatientScene
+				}
 			}else{
 				System.out.println("Invalid Password");
 			}
 		}
 	}
 
+	/**
+	 * Given a username, it will retrieve that users object from the filesystem, then compare the user objects password with
+	 * login password given, if successful, it will return true
+	 * @param username username entered
+	 * @param password password entered
+	 * @param type type of user, doctor, patient, or nurse
+	 * @return true, false depending whether or not password was correct
+	 */
 	private boolean validatePassword(String username, String password, String type){
 		boolean validated = false;
 		switch (type) {
 			case ("patient"):{
 				Patient patient = util.getPatientObjFromJson(username);
+				user = patient;
 				if(Objects.equals(patient.getPassword(), password)){
 					validated = true;
 				}
@@ -65,6 +101,7 @@ public class LoginController {
 			}
 			case ("doctor"): {
 				Doctor doctor = util.getDoctorObjFromJson(username);
+				user = doctor;
 				if(Objects.equals(doctor.getPassword(), password)){
 					validated = true;
 				}
@@ -72,6 +109,7 @@ public class LoginController {
 			}
 			case ("nurse"): {
 				Nurse nurse = util.getNurseObjFromJson(username);
+				user = nurse;
 				if(Objects.equals(nurse.getPassword(), password)){
 					validated = true;
 				}
@@ -86,14 +124,17 @@ public class LoginController {
 		return validated;
 	}
 
+	/**
+	 * For doctors and nurses, it will take them to the pick_patient screen
+	 * for patients, it will take them to their own patient portal, to edit information or schedule and appt
+	 * @param type doctor, nurse, or patient strings
+	 * @return fxml file name
+	 */
 	private String getUserDestination(String type){
 		String destination = "";
 
 		switch (type) {
-			case ("doctor"): {
-				destination = "doctor_evaluation.fxml";
-				break;
-			}
+			case ("doctor"): {}
 			case ("nurse"): {
 				destination = "pick_patient.fxml";
 				break;
@@ -111,6 +152,13 @@ public class LoginController {
 		return destination;
 	}
 
+	/**
+	 * Gets the different user types from the user_registration.fxml and if the username(email) is found within these lists
+	 * it returns the type of user. For example, if in the doctor list there is a LoganPatterson@gmail.com, and i have passed that in as
+	 * a username, it will return "doctor"
+	 * @param username user input
+	 * @return type of user, "nurse, doctor, or patient"
+	 */
 	private String getUserType(String username){
 		String type = "";
 		ArrayList<String> doctorNames = util.getDoctorNames();
@@ -139,13 +187,21 @@ public class LoginController {
 		return type;
 	}
 
-	//Needs to be changed to accept a type to switch to the correct scene
-	public void switchToScene(ActionEvent e, String fxmlName){
+	/**
+	 *
+	 * @param event Action event passed in from widget onClick Listener, see LoginUser()
+	 * @param user user object that will be used to populate data in the destination scene
+	 */
+	public void switchToPickerScene(ActionEvent event, User user){
 		Main main = new Main();
-		main.switchToSceneX(e, fxmlName);
+		main.switchToPickerScene(event, user);
 	}
-	
+
+	/**
+	 * Switch to the register user screen, no data required
+	 * @param e
+	 */
 	public void registerUser(ActionEvent e) {
-		System.out.println("Register the User");
+		Main main = new Main();
 	}
 }
