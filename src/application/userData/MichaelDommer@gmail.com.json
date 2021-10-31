@@ -4,6 +4,7 @@
   "dateOfBirth": 84848348383,
   "phoneNumber": "9493939292",
   "emailAddress": "MichaelDommer@gmail.com",
+  "assignedDoctor": "DonAdams@gmail.com",
   "address": "1350 S Higley Mesa AZ 85306",
   "password": "SomePass4321",
   "previousVisits": [

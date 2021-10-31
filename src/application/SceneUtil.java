@@ -12,6 +12,24 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class SceneUtil {
+    public void switchToLogin(ActionEvent event){
+        Stage stage;
+        Parent root;
+        FXMLLoader loader;
+        Scene scene;
+        try{
+            loader = new FXMLLoader(getClass().getResource("ui/login.fxml"));
+            root = loader.load();
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch(IOException e) {
+            System.out.println("switchToSceneWithUser(): Could not transfer to scene login.fxml");
+            e.printStackTrace();
+        }
+    }
+
     /**
      * This function is used to switch to a specific Scene and pass along some user data with it
      * @param event event passed in from an event listener like a Button

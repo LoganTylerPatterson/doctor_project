@@ -1,0 +1,51 @@
+{
+  "firstName": "asdf",
+  "lastName": "asdf",
+  "emailAddress": "email@gmail.com",
+  "dateOfBirth": 1910191019,
+  "evaluation": {
+    "temperature": 0
+  },
+  "assignedDoctor": "DonAdams@gmail.com",
+  "phoneNumber": "23432423",
+  "address": "asfasdfasdffasdf",
+  "previousVisits": [],
+  "currentMedications": [
+    {
+      "name": "advil",
+      "dosage": 3,
+      "unit": "mg"
+    },
+    {
+      "name": "",
+      "dosage": 0,
+      "unit": ""
+    },
+    {
+      "name": "",
+      "dosage": 0,
+      "unit": ""
+    },
+    {
+      "name": "",
+      "dosage": 0,
+      "unit": ""
+    },
+    {
+      "name": "",
+      "dosage": 0,
+      "unit": ""
+    }
+  ],
+  "insurance": {
+    "primaryHolder": "asdffasf",
+    "name": "asdfasdf",
+    "number": "123123",
+    "address": "asddfasdf"
+  },
+  "pharmacy": {
+    "name": "cvs",
+    "address": "asdffasdf",
+    "phoneNumber": "1234"
+  }
+}

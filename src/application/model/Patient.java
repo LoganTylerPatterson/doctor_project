@@ -3,11 +3,21 @@ import java.util.*;
 //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
 
 public class Patient extends User{
-	private String firstName;
-	private String lastName;
+	private java.lang.String firstName;
+	private java.lang.String lastName;
+
+	public java.lang.String getEmailAddress() {
+		return emailAddress;
+	}
+
+	public void setEmailAddress(java.lang.String emailAddress) {
+		this.emailAddress = emailAddress;
+	}
+
+	private java.lang.String emailAddress;
 	private long dateOfBirth;
 	private Evaluation evaluation;
-	private Doctor assignedDoctor;
+	private String assignedDoctor;
 	private String phoneNumber;
 	private String address;
 	private ArrayList<Long> previousVisits;
@@ -17,12 +27,13 @@ public class Patient extends User{
 	private String password;
 
 	public Patient() {}
-	public Patient(String firstName, String lastName, long dateOfBirth, Evaluation evaluation, Doctor doctor, String phoneNumber, String address,
+	public Patient(String firstName, String lastName,String emailAddress, long dateOfBirth, Evaluation evaluation, String doctor, String phoneNumber, String address,
 			ArrayList<Long> previousVisits, ArrayList<Medication> currentMedications, Insurance insurance,
 			Pharmacy pharmacy, String password) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.emailAddress = emailAddress;
 		this.dateOfBirth = dateOfBirth;
 		this.evaluation = evaluation;
 		this.assignedDoctor = doctor;
@@ -41,27 +52,27 @@ public class Patient extends User{
 		this.evaluation = evaluation;
 	}
 
-	public Doctor getAssignedDoctor() {
+	public String getAssignedDoctor() {
 		return assignedDoctor;
 	}
 
-	public void setAssignedDoctor(Doctor assignedDoctor) {
+	public void setAssignedDoctor(String assignedDoctor) {
 		this.assignedDoctor = assignedDoctor;
 	}
 
-	public void setPassword(String password) {
+	public void setPassword(java.lang.String password) {
 		this.password = password;
 	}
-	public String getFirstName() {
+	public java.lang.String getFirstName() {
 		return firstName;
 	}
-	public void setFirstName(String firstName) {
+	public void setFirstName(java.lang.String firstName) {
 		this.firstName = firstName;
 	}
-	public String getLastName() {
+	public java.lang.String getLastName() {
 		return lastName;
 	}
-	public void setLastName(String lastName) {
+	public void setLastName(java.lang.String lastName) {
 		this.lastName = lastName;
 	}
 	public long getDateOfBirth() {
@@ -70,16 +81,16 @@ public class Patient extends User{
 	public void setDateOfBirth(long dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
-	public String getPhoneNumber() {
+	public java.lang.String getPhoneNumber() {
 		return phoneNumber;
 	}
-	public void setPhoneNumber(String phoneNumber) {
+	public void setPhoneNumber(java.lang.String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	public String getAddress() {
+	public java.lang.String getAddress() {
 		return address;
 	}
-	public void setAddress(String address) {
+	public void setAddress(java.lang.String address) {
 		this.address = address;
 	}
 	public ArrayList<Long> getPreviousVisits() {
@@ -107,10 +118,10 @@ public class Patient extends User{
 		this.pharmacy = pharmacy;
 	}
 
-	public String getPassword() {
+	public java.lang.String getPassword() {
 		return this.password;
 	}
-	public void setPassowrd(String password) {
+	public void setPassowrd(java.lang.String password) {
 		this.password = password;
 	}
 }

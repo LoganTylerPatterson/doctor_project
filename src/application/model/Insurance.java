@@ -3,10 +3,10 @@ package application.model;
 public class Insurance {
 	private String primaryHolder;
 	private String name;
-	private long number;
+	private String number;
 	private String address;
 	public Insurance() {}
-	public Insurance(String primaryHolder, String name, long number, String address) {
+	public Insurance(String primaryHolder, String name, String number, String address) {
 		super();
 		this.primaryHolder = primaryHolder;
 		this.name = name;
@@ -25,10 +25,10 @@ public class Insurance {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public long getNumber() {
+	public String getNumber() {
 		return number;
 	}
-	public void setNumber(long number) {
+	public void setNumber(String number) {
 		this.number = number;
 	}
 	public String getAddress() {

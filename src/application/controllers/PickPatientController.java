@@ -1,7 +1,6 @@
 package application.controllers;
 
 import application.JsonUtil;
-import application.Main;
 import application.SceneUtil;
 import application.model.Doctor;
 import application.model.Nurse;
@@ -13,7 +12,6 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.Spinner;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 

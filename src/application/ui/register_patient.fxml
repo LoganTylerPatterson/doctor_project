@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="751.0" prefWidth="1146.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.RegisterPatientController">
+<AnchorPane prefHeight="751.0" prefWidth="1146.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.RegisterPatientController">
    <children>
       <Label layoutX="51.0" layoutY="124.0" prefHeight="16.0" prefWidth="78.0" text="Email">
          <font>
@@ -58,8 +52,8 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="tfLastname1" layoutX="294.0" layoutY="142.0" prefHeight="25.0" prefWidth="213.0" promptText="SomePass4321" />
-      <TextField layoutX="52.0" layoutY="417.0" prefHeight="25.0" prefWidth="213.0" promptText="Acetometiphen" />
+      <TextField fx:id="tfPassword" layoutX="294.0" layoutY="142.0" prefHeight="25.0" prefWidth="213.0" promptText="SomePass4321" />
+      <TextField fx:id="tfMedName1" layoutX="52.0" layoutY="417.0" prefHeight="25.0" prefWidth="213.0" promptText="Acetometiphen" />
       <Label layoutX="52.0" layoutY="361.0" prefHeight="21.0" prefWidth="269.0" text="Current Medications">
          <font>
             <Font name="System Bold" size="18.0" />
@@ -70,85 +64,85 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="285.0" layoutY="416.0" prefHeight="25.0" prefWidth="62.0" promptText="300" />
+      <TextField fx:id="tfDosage1" layoutX="285.0" layoutY="416.0" prefHeight="25.0" prefWidth="62.0" promptText="300" />
       <Label layoutX="285.0" layoutY="393.0" prefHeight="20.0" prefWidth="69.0" text="Dosage">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="366.0" layoutY="416.0" prefHeight="25.0" prefWidth="62.0" promptText="mg" />
+      <TextField fx:id="tfUnit1" layoutX="366.0" layoutY="416.0" prefHeight="25.0" prefWidth="62.0" promptText="mg" />
       <Label layoutX="366.0" layoutY="393.0" prefHeight="20.0" prefWidth="69.0" text="Units">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="51.0" layoutY="485.0" prefHeight="25.0" prefWidth="213.0" promptText="Acetometiphen" />
+      <TextField fx:id="tfMedName2" layoutX="51.0" layoutY="485.0" prefHeight="25.0" prefWidth="213.0" promptText="Acetometiphen" />
       <Label layoutX="51.0" layoutY="462.0" prefHeight="20.0" prefWidth="198.0" text="Medication Name">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="284.0" layoutY="484.0" prefHeight="25.0" prefWidth="62.0" promptText="300" />
+      <TextField fx:id="tfDosage2" layoutX="284.0" layoutY="484.0" prefHeight="25.0" prefWidth="62.0" promptText="300" />
       <Label layoutX="284.0" layoutY="461.0" prefHeight="20.0" prefWidth="69.0" text="Dosage">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="365.0" layoutY="484.0" prefHeight="25.0" prefWidth="62.0" promptText="mg" />
+      <TextField fx:id="tfUnit2" layoutX="365.0" layoutY="484.0" prefHeight="25.0" prefWidth="62.0" promptText="mg" />
       <Label layoutX="365.0" layoutY="461.0" prefHeight="20.0" prefWidth="69.0" text="Units">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="51.0" layoutY="553.0" prefHeight="25.0" prefWidth="213.0" promptText="Acetometiphen" />
+      <TextField fx:id="tfMedName3" layoutX="51.0" layoutY="553.0" prefHeight="25.0" prefWidth="213.0" promptText="Acetometiphen" />
       <Label layoutX="51.0" layoutY="530.0" prefHeight="20.0" prefWidth="198.0" text="Medication Name">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="284.0" layoutY="552.0" prefHeight="25.0" prefWidth="62.0" promptText="300" />
+      <TextField fx:id="tfDosage3" layoutX="284.0" layoutY="552.0" prefHeight="25.0" prefWidth="62.0" promptText="300" />
       <Label layoutX="284.0" layoutY="529.0" prefHeight="20.0" prefWidth="69.0" text="Dosage">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="365.0" layoutY="552.0" prefHeight="25.0" prefWidth="62.0" promptText="mg" />
+      <TextField fx:id="tfUnit3" layoutX="365.0" layoutY="552.0" prefHeight="25.0" prefWidth="62.0" promptText="mg" />
       <Label layoutX="365.0" layoutY="529.0" prefHeight="20.0" prefWidth="69.0" text="Units">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="51.0" layoutY="620.0" prefHeight="25.0" prefWidth="213.0" promptText="Acetometiphen" />
+      <TextField fx:id="tfMedName4" layoutX="51.0" layoutY="620.0" prefHeight="25.0" prefWidth="213.0" promptText="Acetometiphen" />
       <Label layoutX="51.0" layoutY="597.0" prefHeight="20.0" prefWidth="198.0" text="Medication Name">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="284.0" layoutY="619.0" prefHeight="25.0" prefWidth="62.0" promptText="300" />
+      <TextField fx:id="tfDosage4" layoutX="284.0" layoutY="619.0" prefHeight="25.0" prefWidth="62.0" promptText="300" />
       <Label layoutX="284.0" layoutY="596.0" prefHeight="20.0" prefWidth="69.0" text="Dosage">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="365.0" layoutY="619.0" prefHeight="25.0" prefWidth="62.0" promptText="mg" />
+      <TextField fx:id="tfUnit4" layoutX="365.0" layoutY="619.0" prefHeight="25.0" prefWidth="62.0" promptText="mg" />
       <Label layoutX="365.0" layoutY="596.0" prefHeight="20.0" prefWidth="69.0" text="Units">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="51.0" layoutY="689.0" prefHeight="25.0" prefWidth="213.0" promptText="Acetometiphen" />
+      <TextField fx:id="tfMedName5" layoutX="51.0" layoutY="689.0" prefHeight="25.0" prefWidth="213.0" promptText="Acetometiphen" />
       <Label layoutX="51.0" layoutY="666.0" prefHeight="20.0" prefWidth="198.0" text="Medication Name">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="284.0" layoutY="688.0" prefHeight="25.0" prefWidth="62.0" promptText="300" />
+      <TextField fx:id="tfDosage5" layoutX="284.0" layoutY="688.0" prefHeight="25.0" prefWidth="62.0" promptText="300" />
       <Label layoutX="284.0" layoutY="665.0" prefHeight="20.0" prefWidth="69.0" text="Dosage">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="365.0" layoutY="688.0" prefHeight="25.0" prefWidth="62.0" promptText="mg" />
+      <TextField fx:id="tfUnit5" layoutX="365.0" layoutY="688.0" prefHeight="25.0" prefWidth="62.0" promptText="mg" />
       <Label layoutX="365.0" layoutY="665.0" prefHeight="20.0" prefWidth="69.0" text="Units">
          <font>
             <Font size="16.0" />
@@ -169,25 +163,25 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="tfLastname2" layoutX="554.0" layoutY="73.0" prefHeight="25.0" prefWidth="213.0" promptText="Tim Peterson" />
+      <TextField fx:id="tfPrimaryHolder" layoutX="554.0" layoutY="73.0" prefHeight="25.0" prefWidth="213.0" promptText="Tim Peterson" />
       <Label layoutX="797.0" layoutY="53.0" prefHeight="20.0" prefWidth="144.0" text="Insurance Name">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="tfLastname21" layoutX="797.0" layoutY="73.0" prefHeight="25.0" prefWidth="213.0" promptText="Blue Cross Blue Shield" />
+      <TextField fx:id="tfInsuranceName" layoutX="797.0" layoutY="73.0" prefHeight="25.0" prefWidth="213.0" promptText="Blue Cross Blue Shield" />
       <Label layoutX="554.0" layoutY="122.0" prefHeight="20.0" prefWidth="144.0" text="Insurance #">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="tfLastname22" layoutX="554.0" layoutY="142.0" prefHeight="25.0" prefWidth="213.0" promptText="1212910929190129" />
+      <TextField fx:id="tfInsuranceNumber" layoutX="554.0" layoutY="142.0" prefHeight="25.0" prefWidth="213.0" promptText="1212910929190129" />
       <Label layoutX="797.0" layoutY="122.0" prefHeight="20.0" prefWidth="144.0" text="Address">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextArea fx:id="taAddress1" layoutX="797.0" layoutY="141.0" prefHeight="52.0" prefWidth="213.0" promptText="1350 S Greenfield, Unit 1015, Mesa AZ 85206" />
+      <TextArea fx:id="taInsuranceAddress" layoutX="797.0" layoutY="141.0" prefHeight="52.0" prefWidth="213.0" promptText="1350 S Greenfield, Unit 1015, Mesa AZ 85206" />
       <Label layoutX="554.0" layoutY="214.0" prefHeight="21.0" prefWidth="269.0" text="Pharmacy">
          <font>
             <Font name="System Bold" size="18.0" />
@@ -198,19 +192,19 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="tfLastname23" layoutX="554.0" layoutY="265.0" prefHeight="25.0" prefWidth="213.0" promptText="CVS" />
+      <TextField fx:id="tfPharmacyName" layoutX="554.0" layoutY="265.0" prefHeight="25.0" prefWidth="213.0" promptText="CVS" />
       <Label layoutX="797.0" layoutY="245.0" prefHeight="20.0" prefWidth="144.0" text="Pharmacy #">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="tfLastname211" layoutX="797.0" layoutY="265.0" prefHeight="25.0" prefWidth="213.0" promptText="1234567890" />
+      <TextField fx:id="tfPharmacyNumber" layoutX="797.0" layoutY="265.0" prefHeight="25.0" prefWidth="213.0" promptText="1234567890" />
       <Label layoutX="554.0" layoutY="322.0" prefHeight="20.0" prefWidth="144.0" text="Address">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextArea fx:id="taAddress11" layoutX="554.0" layoutY="341.0" prefHeight="52.0" prefWidth="213.0" promptText="1350 S Greenfield, Unit 1015, Mesa AZ 85206" />
+      <TextArea fx:id="taPharmacyAddress" layoutX="554.0" layoutY="341.0" prefHeight="52.0" prefWidth="213.0" promptText="1350 S Greenfield, Unit 1015, Mesa AZ 85206" />
       <ComboBox layoutX="554.0" layoutY="485.0" prefWidth="150.0" />
       <Label layoutX="554.0" layoutY="461.0" prefHeight="20.0" prefWidth="222.0" text="Doctor You Wish To See">
          <font>
@@ -222,7 +216,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="821.0" layoutY="605.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="166.0" text="Register Info" />
-      <Button layoutX="638.0" layoutY="605.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="166.0" text="Cancel" />
+      <Button fx:id="btnRegister" layoutX="821.0" layoutY="605.0" mnemonicParsing="false" onAction="#registerPatient" prefHeight="25.0" prefWidth="166.0" text="Register Info" />
+      <Button layoutX="638.0" layoutY="605.0" mnemonicParsing="false" onAction="#cancelRegistration" prefHeight="25.0" prefWidth="166.0" text="Cancel" />
    </children>
 </AnchorPane>

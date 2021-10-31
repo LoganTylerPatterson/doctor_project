@@ -3,19 +3,19 @@ package application.model;
 import java.util.ArrayList;
 
 public class Doctor extends User{
-	private String firstName;
-	private String lastName;
-	private String userName;
-	private String password;
-	private String emailAddress;
-	private String phoneNumber;
-	private String address;
+	private java.lang.String firstName;
+	private java.lang.String lastName;
+	private java.lang.String userName;
+	private java.lang.String password;
+	private java.lang.String emailAddress;
+	private java.lang.String phoneNumber;
+	private java.lang.String address;
 	private ArrayList<Long> upcomingAppts;
-	private ArrayList<String> patients;
-	private String role;
+	private ArrayList<java.lang.String> patients;
+	private java.lang.String role;
 	
-	public Doctor(String firstName, String lastName, String userName, String password, String emailAddress, String phoneNumber, String address,
-			ArrayList<Long> upcomingAppts, ArrayList<String> patients, String role) {
+	public Doctor(java.lang.String firstName, java.lang.String lastName, java.lang.String userName, java.lang.String password, java.lang.String emailAddress, java.lang.String phoneNumber, java.lang.String address,
+				  ArrayList<Long> upcomingAppts, ArrayList<java.lang.String> patients, java.lang.String role) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -33,52 +33,52 @@ public class Doctor extends User{
 		
 	}
 
-	public String getRole(){
+	public java.lang.String getRole(){
 		return role;
 	}
-	public void setRole(String role){
+	public void setRole(java.lang.String role){
 		this.role = role;
 	}
-	public String getEmailAddress() {
+	public java.lang.String getEmailAddress() {
 		return emailAddress;
 	}
-	public void setEmailAddress(String emailAddress) {
+	public void setEmailAddress(java.lang.String emailAddress) {
 		this.emailAddress = emailAddress;
 	}
-	public String getFirstName() {
+	public java.lang.String getFirstName() {
 		return firstName;
 	}
-	public void setFirstName(String firstName) {
+	public void setFirstName(java.lang.String firstName) {
 		this.firstName = firstName;
 	}
-	public String getLastName() {
+	public java.lang.String getLastName() {
 		return lastName;
 	}
-	public void setLastName(String lastName) {
+	public void setLastName(java.lang.String lastName) {
 		this.lastName = lastName;
 	}
-	public void setUserName(String userName){
+	public void setUserName(java.lang.String userName){
 		this.userName = userName;
 	}
-	public String getUserName(){
+	public java.lang.String getUserName(){
 		return this.userName;
 	}
-	public String getPassword() {
+	public java.lang.String getPassword() {
 		return password;
 	}
-	public void setPassword(String password) {
+	public void setPassword(java.lang.String password) {
 		this.password = password;
 	}
-	public String getPhoneNumber() {
+	public java.lang.String getPhoneNumber() {
 		return phoneNumber;
 	}
-	public void setPhoneNumber(String phoneNumber) {
+	public void setPhoneNumber(java.lang.String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	public String getAddress() {
+	public java.lang.String getAddress() {
 		return address;
 	}
-	public void setAddress(String address) {
+	public void setAddress(java.lang.String address) {
 		this.address = address;
 	}
 	public ArrayList<Long> getUpcomingAppts() {
@@ -87,10 +87,10 @@ public class Doctor extends User{
 	public void setUpcomingAppts(ArrayList<Long> upcomingAppts) {
 		this.upcomingAppts = upcomingAppts;
 	}
-	public ArrayList<String> getPatients() {
+	public ArrayList<java.lang.String> getPatients() {
 		return patients;
 	}
-	public void setPatients(ArrayList<String> patients) {
+	public void setPatients(ArrayList<java.lang.String> patients) {
 		this.patients = patients;
 	}
 }

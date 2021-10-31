@@ -1,7 +1,6 @@
 package application.controllers;
 
 import application.JsonUtil;
-import application.Main;
 import application.SceneUtil;
 import application.model.Doctor;
 import application.model.Nurse;
@@ -9,21 +8,13 @@ import application.model.User;
 import javafx.event.ActionEvent;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
-import java.io.IOException;
-import java.net.URI;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
 
 import application.model.Patient;
-import javafx.stage.Stage;
 
 public class LoginController {
 	@FXML
