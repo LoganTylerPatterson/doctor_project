@@ -2,6 +2,7 @@ package application.controllers;
 
 import application.JsonUtil;
 import application.Main;
+import application.SceneUtil;
 import application.model.Doctor;
 import application.model.Nurse;
 import application.model.User;
@@ -140,12 +141,12 @@ public class LoginController {
 				break;
 			}
 			case ("patient"): {
-				destination = "patient_registration.fxml";
+				destination = "patient_portal.fxml";
 				break;
 			}
 			default: {
 				System.out.println("User is not registerd with the system");
-				destination = "patient_registration.fxml";
+				destination = "patient_portal.fxml";
 				break;
 			}
 		}
@@ -193,8 +194,8 @@ public class LoginController {
 	 * @param user user object that will be used to populate data in the destination scene
 	 */
 	public void switchToPickerScene(ActionEvent event, User user){
-		Main main = new Main();
-		main.switchToPickerScene(event, user);
+		SceneUtil switcher = new SceneUtil();
+		switcher.switchToPickerScene(event, user);
 	}
 
 	/**
@@ -202,6 +203,7 @@ public class LoginController {
 	 * @param e
 	 */
 	public void registerUser(ActionEvent e) {
-		Main main = new Main();
+		SceneUtil switcher = new SceneUtil();
+		switcher.switchToRegistrationScene(e);
 	}
 }

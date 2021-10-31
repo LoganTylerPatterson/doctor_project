@@ -2,6 +2,7 @@ package application.controllers;
 
 import application.JsonUtil;
 import application.Main;
+import application.SceneUtil;
 import application.model.Doctor;
 import application.model.Nurse;
 import application.model.Patient;
@@ -71,7 +72,7 @@ public class PickPatientController {
     }
 
     public void switchToScene(ActionEvent e){
-        Main main = new Main();
+        SceneUtil switcher = new SceneUtil();
         String destination = "";
         if(Objects.equals(labelRole.getText(), "Nurse")){
             destination = "nurse_evaluation.fxml";
@@ -79,6 +80,6 @@ public class PickPatientController {
         if(Objects.equals(labelRole.getText(), "Doctor")){
             destination = "nurse_evaluation.fxml";
         }
-        main.switchToSceneWithUser(e, destination, user);
+        switcher.switchToSceneWithUser(e, destination, user);
     }
 }
