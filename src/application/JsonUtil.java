@@ -72,7 +72,7 @@ public class JsonUtil {
 			return nurse;
 		} catch(Exception e) {
 			e.printStackTrace();
-			System.out.println("Problem reading Doctor data, returning empty doctor");
+			System.out.println("Problem reading Nurse data " + filename + ", returning empty Nurse");
 			return new Nurse();
 		}
 	}

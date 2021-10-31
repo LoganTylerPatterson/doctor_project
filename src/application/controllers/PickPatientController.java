@@ -48,6 +48,12 @@ public class PickPatientController {
             labelRole.setText("Doctor");
             setComboBoxItems(doctor.getPatients());
         }
+        else if(user.getClass().toString().equals("class application.model.Nurse")){
+            nurse = (Nurse) user;
+            labelUser.setText(nurse.getFirstName() + " " + nurse.getLastName());
+            labelRole.setText("Nurse");
+            setComboBoxItems(nurse.getPatients());
+        }
     }
 
     public void setComboBoxItems(ArrayList<String> patients){

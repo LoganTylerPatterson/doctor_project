@@ -8,12 +8,12 @@ public class Nurse extends User{
 	private String password;
 	private String phoneNumber;
 	private String address;
-	private ArrayList<Patient> patients;
+	private ArrayList<String> patients;
 	private String role;
 	
 	public Nurse() {}
 	public Nurse(String firstName, String lastName, String password, String phoneNumber, String address,
-			ArrayList<Patient> patients, String role) {
+			ArrayList<String> patients, String role) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -59,10 +59,10 @@ public class Nurse extends User{
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public ArrayList<Patient> getPatients() {
+	public ArrayList<String> getPatients() {
 		return patients;
 	}
-	public void setPatients(ArrayList<Patient> patients) {
+	public void setPatients(ArrayList<String> patients) {
 		this.patients = patients;
 	}
 }
