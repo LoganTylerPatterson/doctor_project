@@ -1,19 +1,19 @@
 {
-  "firstName": "asdf",
-  "lastName": "asdf",
-  "emailAddress": "email@gmail.com",
+  "firstName": "Logan",
+  "lastName": "Patterson",
+  "emailAddress": "lpatterson@gmail.com",
   "dateOfBirth": 1910191019,
   "evaluation": {
     "temperature": 0
   },
   "assignedDoctor": "DonAdams@gmail.com",
-  "phoneNumber": "23432423",
-  "address": "asfasdfasdffasdf",
+  "phoneNumber": "9285874094",
+  "address": "1340 S Greenfield, Unit 1015\nMesa AZ, 85206",
   "previousVisits": [],
   "currentMedications": [
     {
-      "name": "advil",
-      "dosage": 3,
+      "name": "Advil",
+      "dosage": 300,
       "unit": "mg"
     },
     {
@@ -38,14 +38,14 @@
     }
   ],
   "insurance": {
-    "primaryHolder": "asdffasf",
-    "name": "asdfasdf",
-    "number": "123123",
-    "address": "asddfasdf"
+    "primaryHolder": "Cristian Patterson",
+    "name": "Blue Cross Blue Shield",
+    "number": "122192912912",
+    "address": "1234 Nice Str, SLC Utah 59548"
   },
   "pharmacy": {
-    "name": "cvs",
-    "address": "asdffasdf",
-    "phoneNumber": "1234"
+    "name": "CVS",
+    "address": "Southern And Greenfield, Mesa\nAz 85936",
+    "phoneNumber": "1293934543"
   }
 }

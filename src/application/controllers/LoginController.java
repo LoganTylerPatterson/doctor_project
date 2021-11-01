@@ -2,9 +2,7 @@ package application.controllers;
 
 import application.JsonUtil;
 import application.SceneUtil;
-import application.model.Doctor;
-import application.model.Nurse;
-import application.model.User;
+import application.model.*;
 import javafx.event.ActionEvent;
 
 import javafx.fxml.FXML;
@@ -13,8 +11,6 @@ import javafx.scene.text.Text;
 
 import java.util.ArrayList;
 import java.util.Objects;
-
-import application.model.Patient;
 
 public class LoginController {
 	@FXML
@@ -152,10 +148,11 @@ public class LoginController {
 	 * @return type of user, "nurse, doctor, or patient"
 	 */
 	private String getUserType(String username){
+		UserRegistry registry = util.getUserRegistry();
 		String type = "";
-		ArrayList<String> doctorNames = util.getDoctorNames();
-		ArrayList<String> nurseNames = util.getNurseNames();
-		ArrayList<String> patientNames = util.getPatientNames();
+		ArrayList<String> doctorNames = registry.getDoctors();
+		ArrayList<String> nurseNames = registry.getNurses();
+		ArrayList<String> patientNames = registry.getPatients();
 
 		//check if present in any of the arrays
 		for(int i = 0; i <= doctorNames.size() - 1; i++){

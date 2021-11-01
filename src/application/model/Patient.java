@@ -121,7 +121,4 @@ public class Patient extends User{
 	public java.lang.String getPassword() {
 		return this.password;
 	}
-	public void setPassowrd(java.lang.String password) {
-		this.password = password;
-	}
 }

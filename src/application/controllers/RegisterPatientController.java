@@ -10,6 +10,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 public class RegisterPatientController {
@@ -111,6 +112,8 @@ public class RegisterPatientController {
         meds.add(med4);
         meds.add(med5);
 
+        String dob = Timestamp.valueOf(pickerDob.getValue().atTime(0,0)).toString();
+
         //Create patient obj
         Patient patient = new Patient(tfFirstname.getText(), tfLastname.getText(), tfEmail.getText(),1910191019L, new Evaluation(),
                 "DonAdams@gmail.com", tfPhoneNumber.getText(), taAddress.getText(),new ArrayList<Long>(),
@@ -118,6 +121,13 @@ public class RegisterPatientController {
 
         //Write patient to file
         util.writePatientToJsonFile(patient, patient.getEmailAddress());
+
+        //Add patient to User Registry
+        UserRegistry reg = util.getUserRegistry();
+        ArrayList<String> patientUsernames = reg.getPatients();
+        patientUsernames.add(patient.getEmailAddress());
+        reg.setPatients(patientUsernames);
+        util.writeUserRegistryToFile(reg);
 
         switcher.switchToLogin(e);
     }

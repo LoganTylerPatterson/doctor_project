@@ -130,76 +130,32 @@ public class JsonUtil {
 		}
 	}
 
-	/**
-	 *
-	 */
-	public ArrayList<String> getDoctorNames(){
-		ArrayList<String> doctors = new ArrayList<>();
-		JsonObject obj;
+	public boolean writeUserRegistryToFile(UserRegistry reg){
 		try {
 			String url = baseUrl + "user_registry.json";
-			Reader reader = new FileReader(url);
-			obj = gson.fromJson(reader, JsonObject.class);
-			reader.close();
-			String arr = obj.get("doctors").toString();
-			Type type = new TypeToken<ArrayList<String>>(){}.getType();
-			doctors = gson.fromJson(arr, type);
-		} catch (FileNotFoundException e) {
-			System.out.println("Could not get doctor names");
+			FileWriter writer = new FileWriter(url);
+			gsonPretty.toJson(reg, writer);
+			writer.flush();
+			writer.close();
+			return true;
+		}catch(IOException e) {
 			e.printStackTrace();
-		} catch (IOException e) {
-			System.out.println("Issue Reading userRegistry file for doctors");
-			e.printStackTrace();
-		} catch(Exception e) {
-			e.printStackTrace();
+			return false;
 		}
-		return doctors;
 	}
 
-	public ArrayList<String> getNurseNames(){
-		ArrayList<String> names = new ArrayList<>();
-		JsonObject obj;
-		try {
-			String url = baseUrl + "user_registry.json";
-			Reader reader = new FileReader(url);
-			obj = gson.fromJson(reader, JsonObject.class);
-			reader.close();
-			String arr = obj.get("nurses").toString();
-			Type type = new TypeToken<ArrayList<String>>(){}.getType();
-			names = gson.fromJson(arr, type);
-		} catch (FileNotFoundException e) {
-			System.out.println("Could not get doctor names");
-			e.printStackTrace();
-		} catch (IOException e) {
-			System.out.println("Issue Reading userRegistry file for doctors");
-			e.printStackTrace();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		return names;
-	}
 
-	public ArrayList<String> getPatientNames(){
-		ArrayList<String> names = new ArrayList<>();
-		JsonObject obj;
+	public UserRegistry getUserRegistry(){
 		try {
 			String url = baseUrl + "user_registry.json";
 			Reader reader = new FileReader(url);
-			obj = gson.fromJson(reader, JsonObject.class);
+			UserRegistry reg = gson.fromJson(reader, UserRegistry.class);
 			reader.close();
-			String arr = obj.get("patients").toString();
-			Type type = new TypeToken<ArrayList<String>>(){}.getType();
-			names = gson.fromJson(arr, type);
-		} catch (FileNotFoundException e) {
-			System.out.println("Could not get patient names");
+			return reg;
+		} catch (Exception e){
+			System.out.println("getUserRegistry(): could not retrieve registry");
 			e.printStackTrace();
-		} catch (IOException e) {
-			System.out.println("Issue Reading userRegistry file for patients");
-			e.printStackTrace();
-		} catch(Exception e) {
-			e.printStackTrace();
+			return new UserRegistry();
 		}
-		return names;
 	}
-	
 }
