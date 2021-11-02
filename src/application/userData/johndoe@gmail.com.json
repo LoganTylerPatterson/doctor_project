@@ -1,0 +1,51 @@
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "emailAddress": "johndoe@gmail.com",
+  "dateOfBirth": 1910191019,
+  "evaluation": {
+    "temperature": 0
+  },
+  "assignedDoctor": "DonAdams@gmail.com",
+  "phoneNumber": "48484848",
+  "address": "1350 S mesa ",
+  "previousVisits": [],
+  "currentMedications": [
+    {
+      "name": "Advil",
+      "dosage": 10,
+      "unit": "mg"
+    },
+    {
+      "name": "",
+      "dosage": 0,
+      "unit": ""
+    },
+    {
+      "name": "",
+      "dosage": 0,
+      "unit": ""
+    },
+    {
+      "name": "",
+      "dosage": 0,
+      "unit": ""
+    },
+    {
+      "name": "",
+      "dosage": 0,
+      "unit": ""
+    }
+  ],
+  "insurance": {
+    "primaryHolder": "asdfdasd",
+    "name": "asdfasdf",
+    "number": "12323123123",
+    "address": "asdfasdfasdf"
+  },
+  "pharmacy": {
+    "name": "asdfasdf",
+    "address": "asdfasdfasdfasdff",
+    "phoneNumber": "12353"
+  }
+}
