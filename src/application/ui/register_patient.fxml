@@ -205,7 +205,7 @@
          </font>
       </Label>
       <TextArea fx:id="taPharmacyAddress" layoutX="554.0" layoutY="341.0" prefHeight="52.0" prefWidth="213.0" promptText="1350 S Greenfield, Unit 1015, Mesa AZ 85206" />
-      <ComboBox layoutX="554.0" layoutY="485.0" prefWidth="150.0" />
+      <ComboBox fx:id="cbDoctor" layoutX="554.0" layoutY="485.0" prefWidth="150.0" />
       <Label layoutX="554.0" layoutY="461.0" prefHeight="20.0" prefWidth="222.0" text="Doctor You Wish To See">
          <font>
             <Font size="16.0" />

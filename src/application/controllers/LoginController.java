@@ -25,13 +25,14 @@ public class LoginController {
 	private User user;
 
 	private JsonUtil util;
-
+	private SceneUtil switcher;
 	/**
 	 * Called after the constructor, can be used to manipulate FXML widgets
 	 * In this case just initializes the JSONUtil class
 	 */
 	public void initialize(){
 		util = new JsonUtil();
+		switcher = new SceneUtil();
 	}
 
 	/**
@@ -61,6 +62,7 @@ public class LoginController {
 					switchToPickerScene(e, user);
 				}else{
 					//switchToPatientScene
+					switcher.switchToSceneWithUser(e, "patient_portal.fxml", util.getPatientObjFromJson(username));
 				}
 			}else{
 				System.out.println("Invalid Password");
@@ -83,6 +85,7 @@ public class LoginController {
 				Patient patient = util.getPatientObjFromJson(username);
 				user = patient;
 				if(Objects.equals(patient.getPassword(), password)){
+					System.out.println("User validated");
 					validated = true;
 				}
 				break;
@@ -91,6 +94,7 @@ public class LoginController {
 				Doctor doctor = util.getDoctorObjFromJson(username);
 				user = doctor;
 				if(Objects.equals(doctor.getPassword(), password)){
+					System.out.println("User validated");
 					validated = true;
 				}
 				break;
@@ -99,6 +103,7 @@ public class LoginController {
 				Nurse nurse = util.getNurseObjFromJson(username);
 				user = nurse;
 				if(Objects.equals(nurse.getPassword(), password)){
+					System.out.println("User validated");
 					validated = true;
 				}
 				break;
@@ -124,10 +129,12 @@ public class LoginController {
 		switch (type) {
 			case ("doctor"): {}
 			case ("nurse"): {
+				System.out.println("User is a doctor/nurse");
 				destination = "pick_patient.fxml";
 				break;
 			}
 			case ("patient"): {
+				System.out.println("User is a patient");
 				destination = "patient_portal.fxml";
 				break;
 			}
@@ -157,18 +164,21 @@ public class LoginController {
 		//check if present in any of the arrays
 		for(int i = 0; i <= doctorNames.size() - 1; i++){
 			if (Objects.equals(doctorNames.get(i), username)){
+				System.out.println("User is a doctor");
 				type = "doctor";
 				break;
 			}
 		}
 		for(int i = 0; i <= nurseNames.size() - 1; i++){
 			if (Objects.equals(nurseNames.get(i), username)){
+				System.out.println("User is a nurse");
 				type = "nurse";
 				break;
 			}
 		}
 		for(int i = 0; i <= patientNames.size() - 1; i++){
 			if (Objects.equals(patientNames.get(i), username)){
+				System.out.println("User is a patient");
 				type = "patient";
 				break;
 			}

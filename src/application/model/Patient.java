@@ -42,6 +42,7 @@ public class Patient extends User{
 		this.previousVisits = previousVisits;
 		this.currentMedications = currentMedications;
 		this.insurance = insurance;
+		this.password = password;
 		this.pharmacy = pharmacy;
 	}
 	public Evaluation getEvaluation() {

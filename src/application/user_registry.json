@@ -1,14 +1,12 @@
 {
   "doctors": [
-    "DonAdams@gmail.com",
-    "RafaelJohnson@gmail.com",
-    "JohnDoe@Gmail.com",
-    "MichelleYin@gmail.com"
+    "DonAdams@gmail.com"
   ],
   "patients": [
     "MichaelDommer@gmail.com",
     "lpatterson@gmail.com",
-    "johndoe@gmail.com"
+    "johndoe@gmail.com",
+    "asdfasdfasdf"
   ],
   "nurses": [
     "RatchetGreene@gmail.com",

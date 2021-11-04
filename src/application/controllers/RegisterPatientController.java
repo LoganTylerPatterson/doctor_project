@@ -5,13 +5,13 @@ import application.SceneUtil;
 import application.model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.sql.Timestamp;
+import java.time.Instant;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class RegisterPatientController {
 
@@ -74,9 +74,13 @@ public class RegisterPatientController {
     @FXML
     TextField tfUnit5;
     @FXML
+    ComboBox cbDoctor;
+    @FXML
     Button btnRegister;
     @FXML
     Button btnCancel;
+
+    ArrayList<Doctor> doctorObjs = new ArrayList();
 
     SceneUtil switcher;
     JsonUtil util;
@@ -85,13 +89,17 @@ public class RegisterPatientController {
     public void initialize(){
         util = new JsonUtil();
         switcher = new SceneUtil();
+        ArrayList<String> doctors = util.getUserRegistry().getDoctors();
+        for(int i = 0; i <= doctors.size() - 1; i++){
+            Doctor doc = util.getDoctorObjFromJson(doctors.get(i));
+            doctorObjs.add(doc);
+            cbDoctor.getItems().add(doc.getFirstName() + " " + doc.getLastName());
+        }
     }
-
 
     public void cancelRegistration(ActionEvent e){
         switcher.switchToLogin(e);
     }
-    //TODO get selected doctor
 
     public void registerPatient(ActionEvent e){
         //Create pharmacy, insurance, and medication objects
@@ -112,11 +120,23 @@ public class RegisterPatientController {
         meds.add(med4);
         meds.add(med5);
 
-        String dob = Timestamp.valueOf(pickerDob.getValue().atTime(0,0)).toString();
+        long dob = Date.from(Instant.from(pickerDob.getValue().atStartOfDay(ZoneId.systemDefault()))).getTime();
 
+        //Get selected doctor
+        Doctor preferredDoc = null;
+        String doctorName = (String) cbDoctor.getValue();
+        String[] names = doctorName.split(" ");
+        System.out.println("Names are " + names.toString());
+        for(int i = 0; i <= doctorObjs.size() - 1; i++){
+            if(doctorObjs.get(i).getFirstName().equals(names[0]) && doctorObjs.get(i).getFirstName().equals(names[1])){
+                preferredDoc = doctorObjs.get(i);
+            }
+        }
+        //Assertion is fine because the only possibilities are the doctors that are being pulled in
         //Create patient obj
-        Patient patient = new Patient(tfFirstname.getText(), tfLastname.getText(), tfEmail.getText(),1910191019L, new Evaluation(),
-                "DonAdams@gmail.com", tfPhoneNumber.getText(), taAddress.getText(),new ArrayList<Long>(),
+        assert preferredDoc != null;
+        Patient patient = new Patient(tfFirstname.getText(), tfLastname.getText(), tfEmail.getText(),dob, new Evaluation(),
+                preferredDoc.getEmailAddress(), tfPhoneNumber.getText(), taAddress.getText(),new ArrayList<Long>(),
                 meds, insurance, pharmacy, tfPassword.getText());
 
         //Write patient to file
@@ -129,6 +149,10 @@ public class RegisterPatientController {
         reg.setPatients(patientUsernames);
         util.writeUserRegistryToFile(reg);
 
+        //Add patient to doctors list of patients
+        ArrayList<String> pats = preferredDoc.getPatients();
+        pats.add(patient.getEmailAddress());
+        util.writeDoctorObjToJson(preferredDoc, preferredDoc.getUserName());
         switcher.switchToLogin(e);
     }
 }

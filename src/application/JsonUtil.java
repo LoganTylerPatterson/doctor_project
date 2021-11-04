@@ -45,7 +45,7 @@ public class JsonUtil {
 			return doctor;
 		} catch(Exception e) {
 			e.printStackTrace();
-			System.out.println("Problem reading Doctor " + filename + ", returning empty doctor");
+			System.out.println("Problem reading Doctor " + filename + ext + ", returning empty doctor");
 			return new Doctor();
 		}
 	}

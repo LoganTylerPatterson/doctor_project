@@ -1,6 +1,7 @@
 package application;
 
 import application.controllers.PickPatientController;
+import application.controllers.RegisterPatientController;
 import application.model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
