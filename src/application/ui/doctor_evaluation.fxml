@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="735.0" prefWidth="1139.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.DoctorEvaluationController">
+<AnchorPane prefHeight="735.0" prefWidth="1139.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.DoctorEvaluationController">
    <children>
       <ListView fx:id="lvHistory" layoutX="105.0" layoutY="81.0" prefHeight="448.0" prefWidth="267.0" />
       <Text layoutX="105.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical History">
@@ -44,7 +39,7 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Button fx:id="btnPrescribe" layoutX="540.0" layoutY="529.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="157.0" text="Prescribe" textAlignment="CENTER">
+      <Button fx:id="btnPrescribe" layoutX="540.0" layoutY="529.0" mnemonicParsing="false" onAction="#addMedication" prefHeight="0.0" prefWidth="157.0" text="Prescribe" textAlignment="CENTER">
          <font>
             <Font name="Cantarell Bold" size="13.0" />
          </font>

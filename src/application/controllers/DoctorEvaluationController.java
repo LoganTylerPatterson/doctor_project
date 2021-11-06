@@ -1,11 +1,16 @@
 package application.controllers;
 
+import application.JsonUtil;
+import application.SceneUtil;
 import application.model.Doctor;
+import application.model.Evaluation;
 import application.model.Medication;
 import application.model.Patient;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+
+import java.util.ArrayList;
 
 public class DoctorEvaluationController {
     Doctor doc;
@@ -62,6 +67,14 @@ public class DoctorEvaluationController {
     @FXML
     Button btnViewNurseEval;
 
+    JsonUtil util;
+    SceneUtil switcher;
+
+    @FXML
+    public void initialize(){
+        util = new JsonUtil();
+        switcher = new SceneUtil();
+    }
 
     public void addMedication(ActionEvent e){
         String dosage = tfMedAmount.getText();
@@ -69,7 +82,13 @@ public class DoctorEvaluationController {
         String name = tfMedicationName.getText();
         Medication med = new Medication(name, dosage, unit);
         lvCurrentMedications.getItems().add(med.toString());
-        pat.getCurrentMedications().add(med);
+        ArrayList<Medication> meds = pat.getCurrentMedications();
+        meds.add(med);
+        pat.setCurrentMedications(meds);
+        util.writePatientToJsonFile(pat, pat.getEmailAddress());
+        tfMedAmount.clear();
+        tfMedicationName.clear();
+        tfMedUnit.clear();
     }
 
     public void setData(Doctor doctor, Patient patient){
@@ -78,12 +97,45 @@ public class DoctorEvaluationController {
         populateFields(this.pat);
     }
 
-    public void submitEvaluation(){
+    public void submitEvaluation(ActionEvent e){
+        //Fill evaluation fields
+        Evaluation eval = new Evaluation();
+        eval.setEyesAbnormal(cbEyes.isSelected());
+        eval.setEarsAbnormal(cbEars.isSelected());
+        eval.setNoseAbnormal(cbNose.isSelected());
+        eval.setHeartAbnormal(cbHeart.isSelected());
+        eval.setBreathingAbnormal(cbBreathing.isSelected());
+        eval.setThroatAbnormal(cbThroat.isSelected());
+        eval.setReflexesAbnormal(cbReflexes.isSelected());
 
+        eval.setEyesNotes(taEyesNotes.getText());
+        eval.setEarsNotes(taEarNotes.getText());
+        eval.setNoseNotes(taNoseNotes.getText());
+        eval.setHeartNotes(taHeartNotes.getText());
+        eval.setThroatNotes(taThroatNotes.getText());
+        eval.setBreathingNotes(taBreathingNotes.getText());
+        eval.setReflexesNotes(taBreathingNotes.getText());
+
+        //setEval to patient
+        Evaluation nurseEval = pat.getEvaluation();
+        eval.setRespirationRate(nurseEval.getRespirationRate());
+        eval.setTemperature(nurseEval.getTemperature());
+        eval.setBloodPressure(nurseEval.getBloodPressure());
+        eval.setPulse(nurseEval.getPulse());
+
+        pat.setEvaluation(eval);
+
+        //Set Notes to patient
+        pat.setNote(taNotes.getText());
+
+        util.writePatientToJsonFile(pat, pat.getEmailAddress());
+
+        //Go to pickPatient screen again
+        switcher.switchToPickerScene(e, this.doc);
     }
 
     public void viewNurseEvaluation(){
-
+        //TODO Switch to nurse evaluation scene
     }
 
     public void populateFields(Patient pat){

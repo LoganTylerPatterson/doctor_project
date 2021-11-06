@@ -1,0 +1,71 @@
+{
+  "firstName": "Emmie",
+  "lastName": "Faulkinbury",
+  "emailAddress": "EmmieFaulkinbury@gmail.com",
+  "dateOfBirth": 929170800000,
+  "evaluation": {
+    "bloodPressure": "",
+    "pulse": "",
+    "respirationRate": "",
+    "temperature": "",
+    "eyesNotes": "",
+    "earsNotes": "",
+    "heartNotes": "",
+    "reflexesNotes": "",
+    "reflexesAbnormal": false,
+    "noseNotes": "",
+    "throatNotes": "",
+    "breathingNotes": "",
+    "eyesAbnormal": false,
+    "earsAbnormal": false,
+    "heartAbnormal": false,
+    "noseAbnormal": false,
+    "throatAbnormal": false,
+    "breathingAbnormal": false
+  },
+  "assignedDoctor": "DonAdams@gmail.com",
+  "phoneNumber": "4809854532",
+  "address": "asdfa;sldkjfja;sdfkj",
+  "previousVisits": [],
+  "currentMedications": [
+    {
+      "name": "Kylena",
+      "dosage": "0",
+      "unit": "mg"
+    },
+    {
+      "name": "",
+      "dosage": "",
+      "unit": ""
+    },
+    {
+      "name": "",
+      "dosage": "",
+      "unit": ""
+    },
+    {
+      "name": "",
+      "dosage": "",
+      "unit": ""
+    },
+    {
+      "name": "",
+      "dosage": "",
+      "unit": ""
+    }
+  ],
+  "insurance": {
+    "primaryHolder": "Emmie Faulkinbury",
+    "name": "Banner Plus Gold",
+    "number": "84848484844848",
+    "address": "da;lskdjfa;sldkjfjfasdfk\t\t"
+  },
+  "pharmacy": {
+    "name": "CVS",
+    "address": "a;sldkfjjas;ldkfja;lskdkj",
+    "phoneNumber": "434343434343434"
+  },
+  "password": "p",
+  "note": "",
+  "history": []
+}

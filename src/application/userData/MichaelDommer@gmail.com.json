@@ -1,31 +1,50 @@
 {
   "firstName": "Michael",
   "lastName": "Dommer",
-  "dateOfBirth": 84848348383,
-  "phoneNumber": "9493939292",
   "emailAddress": "MichaelDommer@gmail.com",
+  "dateOfBirth": 84848348383,
+  "evaluation": {
+    "bloodPressure": "",
+    "pulse": "",
+    "respirationRate": "",
+    "temperature": "",
+    "eyesNotes": "",
+    "earsNotes": "",
+    "heartNotes": "",
+    "reflexesNotes": "",
+    "reflexesAbnormal": false,
+    "noseNotes": "",
+    "throatNotes": "",
+    "breathingNotes": "",
+    "eyesAbnormal": false,
+    "earsAbnormal": false,
+    "heartAbnormal": false,
+    "noseAbnormal": false,
+    "throatAbnormal": false,
+    "breathingAbnormal": false
+  },
   "assignedDoctor": "DonAdams@gmail.com",
+  "phoneNumber": "9493939292",
   "address": "1350 S Higley Mesa AZ 85306",
-  "password": "SomePass4321",
-  "history": [
-    "smoker",
-    "really fat",
-    "heart attack"
-  ],
   "previousVisits": [
     232323232323
   ],
   "currentMedications": [
     {
       "name": "Advil",
-      "dosage": 500,
+      "dosage": "500",
       "unit": "mg"
+    },
+    {
+      "name": "Vicadin",
+      "dosage": "500",
+      "unit": "ml"
     }
   ],
   "insurance": {
     "primaryHolder": "Logan Patterson",
     "name": "Blue Cross Blue Shield",
-    "number": 92929292,
+    "number": "92929292",
     "address": "1345 N Jefferson Phoenix AZ 849383"
   },
   "pharmacy": {
@@ -33,5 +52,11 @@
     "address": "502 S Address here AZ ######",
     "phoneNumber": "9483838383"
   },
-  "note": "Patient is very friendly, needs to stop the smoking"
+  "password": "SomePass4321",
+  "note": "Patient is very friendly, needs to stop the smoking",
+  "history": [
+    "smoker",
+    "really fat",
+    "heart attack"
+  ]
 }
