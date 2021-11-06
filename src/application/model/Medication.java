@@ -2,7 +2,7 @@ package application.model;
 
 public class Medication {
 	private String name;
-	private int dosage;
+	private String dosage;
 	private String unit;
 	public String getName() {
 		return name;
@@ -10,10 +10,10 @@ public class Medication {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getDosage() {
+	public String getDosage() {
 		return dosage;
 	}
-	public void setDosage(int dosage) {
+	public void setDosage(String dosage) {
 		this.dosage = dosage;
 	}
 	public String getUnit() {
@@ -26,7 +26,7 @@ public class Medication {
 	public String toString() {
 		return name + " " + dosage + unit;
 	}
-	public Medication(String name, int dosage, String unit) {
+	public Medication(String name, String dosage, String unit) {
 		super();
 		this.name = name;
 		this.dosage = dosage;

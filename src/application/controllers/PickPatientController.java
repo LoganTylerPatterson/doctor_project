@@ -34,6 +34,14 @@ public class PickPatientController {
     private Doctor doctor;
     private Stage stage;
     private JsonUtil util;
+    private SceneUtil switcher;
+    private boolean isDoctor;
+
+    @FXML
+    public void initialize(){
+        util = new JsonUtil();
+        switcher = new SceneUtil();
+    }
 
     public PickPatientController(){
         util = new JsonUtil();
@@ -45,13 +53,33 @@ public class PickPatientController {
             doctor = (Doctor) user;
             labelUser.setText(doctor.getFirstName() + " " + doctor.getLastName());
             labelRole.setText("Doctor");
+            isDoctor = true;
             setComboBoxItems(doctor.getPatients());
         }
         else if(user.getClass().toString().equals("class application.model.Nurse")){
             nurse = (Nurse) user;
             labelUser.setText(nurse.getFirstName() + " " + nurse.getLastName());
             labelRole.setText("Nurse");
+            isDoctor = false;
             setComboBoxItems(nurse.getPatients());
+        }
+    }
+
+    public void navigateToEval(ActionEvent e){
+        String patient = (String) comboBoxPatients.getValue();
+        String[] names = patient.split(" ");
+        ArrayList<String> allPatients = util.getUserRegistry().getPatients();
+        Patient tmp = null;
+        for(int i = 0; i <= allPatients.size() - 1; i++){
+            tmp = util.getPatientObjFromJson(allPatients.get(i));
+            if(tmp.getFirstName().equals(names[0]) && tmp.getLastName().equals(names[1])){
+                break;
+            }
+        }
+        if(isDoctor){
+            switcher.switchToDoctorEvaluation(e, doctor, tmp);
+        } else {
+            switcher.switchToNurseEvaluation(e, nurse, tmp);
         }
     }
 
@@ -62,15 +90,7 @@ public class PickPatientController {
         }
     }
 
-    @FXML
-    private void recieveData(MouseEvent event){
-        System.out.println("RecieveData was called");
-        Node node = (Node) event.getSource();
-        stage = (Stage) node.getScene().getWindow();
-    }
-
     public void switchToScene(ActionEvent e){
-        SceneUtil switcher = new SceneUtil();
         String destination = "";
         if(Objects.equals(labelRole.getText(), "Nurse")){
             destination = "nurse_evaluation.fxml";

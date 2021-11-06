@@ -5,15 +5,6 @@ import java.util.*;
 public class Patient extends User{
 	private java.lang.String firstName;
 	private java.lang.String lastName;
-
-	public java.lang.String getEmailAddress() {
-		return emailAddress;
-	}
-
-	public void setEmailAddress(java.lang.String emailAddress) {
-		this.emailAddress = emailAddress;
-	}
-
 	private java.lang.String emailAddress;
 	private long dateOfBirth;
 	private Evaluation evaluation;
@@ -25,11 +16,13 @@ public class Patient extends User{
 	private Insurance insurance;
 	private Pharmacy pharmacy;
 	private String password;
+	private String note;
+	private ArrayList<String> history;
 
 	public Patient() {}
 	public Patient(String firstName, String lastName,String emailAddress, long dateOfBirth, Evaluation evaluation, String doctor, String phoneNumber, String address,
 			ArrayList<Long> previousVisits, ArrayList<Medication> currentMedications, Insurance insurance,
-			Pharmacy pharmacy, String password) {
+			Pharmacy pharmacy, String password, ArrayList<String> history, String note) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -44,6 +37,8 @@ public class Patient extends User{
 		this.insurance = insurance;
 		this.password = password;
 		this.pharmacy = pharmacy;
+		this.history = history;
+		this.note = "";
 	}
 	public Evaluation getEvaluation() {
 		return evaluation;
@@ -118,8 +113,25 @@ public class Patient extends User{
 	public void setPharmacy(Pharmacy pharmacy) {
 		this.pharmacy = pharmacy;
 	}
-
+	public java.lang.String getEmailAddress() {
+		return emailAddress;
+	}
+	public void setEmailAddress(java.lang.String emailAddress) {
+		this.emailAddress = emailAddress;
+	}
 	public java.lang.String getPassword() {
 		return this.password;
+	}
+	public String getNote(){
+		return this.note;
+	}
+	public void setNote(String note){
+		this.note = note;
+	}
+	public ArrayList<String> getHistory() {
+		return history;
+	}
+	public void setHistory(ArrayList<String> history) {
+		this.history = history;
 	}
 }

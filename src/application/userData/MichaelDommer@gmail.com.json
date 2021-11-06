@@ -7,6 +7,11 @@
   "assignedDoctor": "DonAdams@gmail.com",
   "address": "1350 S Higley Mesa AZ 85306",
   "password": "SomePass4321",
+  "history": [
+    "smoker",
+    "really fat",
+    "heart attack"
+  ],
   "previousVisits": [
     232323232323
   ],
@@ -27,5 +32,6 @@
     "name": "CVS",
     "address": "502 S Address here AZ ######",
     "phoneNumber": "9483838383"
-  }
+  },
+  "note": "Patient is very friendly, needs to stop the smoking"
 }

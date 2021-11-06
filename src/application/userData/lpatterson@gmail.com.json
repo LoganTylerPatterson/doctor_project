@@ -6,6 +6,11 @@
   "evaluation": {
     "temperature": 0
   },
+  "history": [
+    "Massive weiner",
+    "Heart Murmur",
+    "Stroke"
+  ],
   "assignedDoctor": "DonAdams@gmail.com",
   "phoneNumber": "9285874094",
   "address": "1340 S Greenfield, Unit 1015\nMesa AZ, 85206",

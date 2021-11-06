@@ -10,7 +10,7 @@
       <Label fx:id="labelUser" layoutX="63.0" layoutY="21.0" text="User goes here" />
       <Label layoutX="389.0" layoutY="21.0" text="Role: " />
       <Label fx:id="labelRole" layoutX="428.0" layoutY="21.0" text="Role goes here" />
-      <Button fx:id="btnGo" layoutX="286.0" layoutY="187.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="65.0" text="Go" />
+      <Button fx:id="btnGo" layoutX="286.0" layoutY="187.0" mnemonicParsing="false" onAction="#navigateToDoctorEval" prefHeight="26.0" prefWidth="65.0" text="Go" />
       <ComboBox fx:id="comboBoxPatients" layoutX="182.0" layoutY="141.0" prefHeight="26.0" prefWidth="170.0" />
    </children>
 </AnchorPane>

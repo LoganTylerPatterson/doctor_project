@@ -1,7 +1,11 @@
 package application;
 
+import application.controllers.DoctorEvaluationController;
 import application.controllers.PickPatientController;
 import application.controllers.RegisterPatientController;
+import application.model.Doctor;
+import application.model.Nurse;
+import application.model.Patient;
 import application.model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -52,6 +56,30 @@ public class SceneUtil {
             stage.show();
         } catch(IOException e) {
             System.out.println("switchToSceneWithUser(): Could not transfer to scene " + fxmlName);
+            e.printStackTrace();
+        }
+    }
+
+    public void switchToNurseEvaluation(ActionEvent event, Nurse n, Patient p){
+
+    }
+
+    public void switchToDoctorEvaluation(ActionEvent event, Doctor d, Patient p){
+        Stage stage;
+        Parent root;
+        FXMLLoader loader;
+        Scene scene;
+        try{
+            loader = new FXMLLoader(getClass().getResource("ui/doctor_evaluation.fxml"));
+            root = loader.load();
+            DoctorEvaluationController controller = loader.getController();
+            controller.setData(d, p);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch(IOException e){
+            System.out.println("switchToRegistrationScene(): Could not transfer to register_patient.fxml");
             e.printStackTrace();
         }
     }
