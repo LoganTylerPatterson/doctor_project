@@ -159,5 +159,21 @@ public class DoctorEvaluationController {
         if(!num.isEmpty() || name.isBlank()){
             tfPharmacyNumber.setText(num);
         }
+
+        //Populate the evaluation history
+        taEyesNotes.setText(pat.getEvaluation().getEyesNotes());
+        taEarNotes.setText(pat.getEvaluation().getEarsNotes());
+        taNoseNotes.setText(pat.getEvaluation().getNoseNotes());
+        taThroatNotes.setText(pat.getEvaluation().getThroatNotes());
+        taHeartNotes.setText(pat.getEvaluation().getHeartNotes());
+        taReflexesNotes.setText(pat.getEvaluation().getReflexesNotes());
+        taBreathingNotes.setText(pat.getEvaluation().getBreathingNotes());
+
+        cbEyes.setSelected(pat.getEvaluation().isEyesAbnormal());
+        cbEars.setSelected(pat.getEvaluation().isEarsAbnormal());
+        cbNose.setSelected(pat.getEvaluation().isNoseAbnormal());
+        cbThroat.setSelected(pat.getEvaluation().isThroatAbnormal());
+        cbBreathing.setSelected(pat.getEvaluation().isBreathingAbnormal());
+        cbReflexes.setSelected(pat.getEvaluation().isReflexesAbnormal());
     }
 }

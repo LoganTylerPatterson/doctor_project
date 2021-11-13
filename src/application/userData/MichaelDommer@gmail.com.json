@@ -8,20 +8,20 @@
     "pulse": "",
     "respirationRate": "",
     "temperature": "",
-    "eyesNotes": "",
+    "eyesNotes": "asdfasd",
     "earsNotes": "",
     "heartNotes": "",
     "reflexesNotes": "",
     "reflexesAbnormal": false,
-    "noseNotes": "",
-    "throatNotes": "",
+    "noseNotes": "asdfasdf",
+    "throatNotes": "asdfasdf",
     "breathingNotes": "",
-    "eyesAbnormal": false,
+    "eyesAbnormal": true,
     "earsAbnormal": false,
     "heartAbnormal": false,
-    "noseAbnormal": false,
-    "throatAbnormal": false,
-    "breathingAbnormal": false
+    "noseAbnormal": true,
+    "throatAbnormal": true,
+    "breathingAbnormal": true
   },
   "assignedDoctor": "DonAdams@gmail.com",
   "phoneNumber": "9493939292",
@@ -39,6 +39,11 @@
       "name": "Vicadin",
       "dosage": "500",
       "unit": "ml"
+    },
+    {
+      "name": "Licinipril",
+      "dosage": "20",
+      "unit": "mg"
     }
   ],
   "insurance": {
