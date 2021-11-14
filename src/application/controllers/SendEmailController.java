@@ -14,9 +14,12 @@ import javafx.scene.control.TextField;
 
 public class SendEmailController {
 
-    Doctor d = null;
-    Nurse n = null;
-    Patient p = null;
+    Doctor d;
+    Nurse n;
+    Patient p;
+    boolean isDoctor;
+    boolean isNurse;
+    boolean isPatient;
 
     @FXML
     TextField to;
@@ -34,14 +37,18 @@ public class SendEmailController {
     Button cancel;
 
     public void setData(User u) {
+        System.out.println(u.getClass().toString());
         if(u.getClass().toString().equals("class application.model.Doctor")){
-            d = (Doctor) u;
+            this.d = (Doctor) u;
+            isDoctor = true;
         }
         else if(u.getClass().toString().equals("class application.model.Nurse")){
-            n = (Nurse) n;
+            this.n = (Nurse) u;
+            isNurse = true;
         }
         else if(u.getClass().toString().equals("class application.model.Patient")){
-            p = (Patient) p;
+            this.p = (Patient) u;
+            isPatient = true;
         }
     }
 
@@ -50,10 +57,10 @@ public class SendEmailController {
         if(p != null){
             s.switchToPatientPortal(event, p);
         }
-        else if(d != null){
+        if(d != null){
             s.switchToPickerScene(event, d);
         }
-        else if(n != null){
+        if(n != null){
             s.switchToPickerScene(event, n);
         }
     }
@@ -62,14 +69,15 @@ public class SendEmailController {
         Main main = new Main();
         main.sendEmail(to.getText(), subject.getText(), body.getText());
         SceneUtil s = new SceneUtil();
-        if(p != null){
-            s.switchToPatientPortal(event, p);
+        System.out.println("We are here");
+        if(isPatient){
+            s.switchToPatientPortal(event, this.p);
         }
-        else if(d != null){
-            s.switchToPickerScene(event, d);
+        else if(isDoctor){
+            s.switchToPickerScene(event, this.d);
         }
-        else if(n != null){
-            s.switchToPickerScene(event, n);
+        if(isNurse){
+            s.switchToPickerScene(event, this.n);
         }
     }
 }

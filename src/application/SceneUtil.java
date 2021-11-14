@@ -88,7 +88,7 @@ public class SceneUtil {
         FXMLLoader loader;
         Scene scene;
         try{
-            loader = new FXMLLoader(getClass().getResource("ui/patientGUI.fxml"));
+            loader = new FXMLLoader(getClass().getResource("ui/patient_portal.fxml"));
             root = loader.load();
             PatientGUIController controller = loader.getController();
             controller.setData(p);

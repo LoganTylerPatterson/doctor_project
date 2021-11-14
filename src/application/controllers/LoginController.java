@@ -62,7 +62,7 @@ public class LoginController {
 					switchToPickerScene(e, user);
 				}else{
 					//switchToPatientScene
-					switcher.switchToSceneWithUser(e, "patient_portal.fxml", util.getPatientObjFromJson(username));
+					switcher.switchToPatientPortal(e, (Patient)user);
 				}
 			}else{
 				System.out.println("Invalid Password");
