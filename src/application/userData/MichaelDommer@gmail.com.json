@@ -27,7 +27,10 @@
   "phoneNumber": "9493939292",
   "address": "1350 S Higley Mesa AZ 85306",
   "previousVisits": [
-    232323232323
+    232323232323,
+    1635836400000,
+    1636614000000,
+    1635836400000
   ],
   "currentMedications": [
     {
