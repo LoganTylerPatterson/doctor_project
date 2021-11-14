@@ -8,26 +8,29 @@
     "pulse": "",
     "respirationRate": "",
     "temperature": "",
-    "eyesNotes": "",
+    "eyesNotes": "asdfasd",
     "earsNotes": "",
     "heartNotes": "",
     "reflexesNotes": "",
     "reflexesAbnormal": false,
-    "noseNotes": "",
-    "throatNotes": "",
+    "noseNotes": "asdfasdf",
+    "throatNotes": "asdfasdf",
     "breathingNotes": "",
-    "eyesAbnormal": false,
+    "eyesAbnormal": true,
     "earsAbnormal": false,
     "heartAbnormal": false,
-    "noseAbnormal": false,
-    "throatAbnormal": false,
-    "breathingAbnormal": false
+    "noseAbnormal": true,
+    "throatAbnormal": true,
+    "breathingAbnormal": true
   },
   "assignedDoctor": "DonAdams@gmail.com",
   "phoneNumber": "9493939292",
   "address": "1350 S Higley Mesa AZ 85306",
   "previousVisits": [
-    232323232323
+    232323232323,
+    1635836400000,
+    1636614000000,
+    1635836400000
   ],
   "currentMedications": [
     {
@@ -39,6 +42,11 @@
       "name": "Vicadin",
       "dosage": "500",
       "unit": "ml"
+    },
+    {
+      "name": "Licinipril",
+      "dosage": "20",
+      "unit": "mg"
     }
   ],
   "insurance": {

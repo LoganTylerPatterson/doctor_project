@@ -10,16 +10,18 @@ public class Nurse extends User{
 	private String address;
 	private ArrayList<String> patients;
 	private String role;
+	private String emailAddress;
 	
 	public Nurse() {}
 	public Nurse(String firstName, String lastName, String password, String phoneNumber, String address,
-			ArrayList<String> patients, String role) {
+			ArrayList<String> patients, String role, String emailAddress) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.password = password;
 		this.phoneNumber = phoneNumber;
 		this.address = address;
+		this.emailAddress = emailAddress;
 		this.patients = patients;
 		this.role = role;
 	}
@@ -65,4 +67,6 @@ public class Nurse extends User{
 	public void setPatients(ArrayList<String> patients) {
 		this.patients = patients;
 	}
+	public void setEmailAddress(String emailAddress){this.emailAddress = emailAddress;}
+	public String getEmailAddress(){return this.emailAddress;}
 }

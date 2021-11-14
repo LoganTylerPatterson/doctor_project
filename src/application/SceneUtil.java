@@ -1,8 +1,6 @@
 package application;
 
-import application.controllers.DoctorEvaluationController;
-import application.controllers.PickPatientController;
-import application.controllers.RegisterPatientController;
+import application.controllers.*;
 import application.model.Doctor;
 import application.model.Nurse;
 import application.model.Patient;
@@ -62,6 +60,46 @@ public class SceneUtil {
 
     public void switchToNurseEvaluation(ActionEvent event, Nurse n, Patient p){
 
+    }
+
+    public void switchToSendEmail(ActionEvent event, User u){
+        Stage stage;
+        Parent root;
+        FXMLLoader loader;
+        Scene scene;
+        try{
+            loader = new FXMLLoader(getClass().getResource("ui/send_email.fxml"));
+            root = loader.load();
+            SendEmailController controller = loader.getController();
+            controller.setData(u);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }catch(IOException e){
+            System.out.println("switchToRegistrationScene(): Could not transfer to register_patient.fxml");
+            e.printStackTrace();
+        }
+    }
+
+    public void switchToPatientPortal(ActionEvent event, Patient p){
+        Stage stage;
+        Parent root;
+        FXMLLoader loader;
+        Scene scene;
+        try{
+            loader = new FXMLLoader(getClass().getResource("ui/patient_portal.fxml"));
+            root = loader.load();
+            PatientGUIController controller = loader.getController();
+            controller.setData(p);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch(IOException e){
+            System.out.println("switchToRegistrationScene(): Could not transfer to PatientGUI.fxml");
+            e.printStackTrace();
+        }
     }
 
     public void switchToDoctorEvaluation(ActionEvent event, Doctor d, Patient p){
