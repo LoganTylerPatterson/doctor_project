@@ -30,6 +30,10 @@ public class Main extends Application {
 				e.printStackTrace();
 			}
 		}
+
+		public void sendEmail(String to,  String subject,  String body){
+			getHostServices().showDocument("mailto:" + to + "?subject=" + subject + "&body="+ body);
+		}
 	
 	public static void main(String[] args) {
 			launch(args);

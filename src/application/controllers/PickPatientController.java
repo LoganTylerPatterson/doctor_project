@@ -88,6 +88,14 @@ public class PickPatientController {
         }
     }
 
+    public void goToEmailPage(ActionEvent event){
+        if(isDoctor) {
+            switcher.switchToSendEmail(event, doctor);
+        } else{
+            switcher.switchToSendEmail(event, nurse);
+        }
+    }
+
     public void switchToScene(ActionEvent e){
         String destination = "";
         if(Objects.equals(labelRole.getText(), "Nurse")){
