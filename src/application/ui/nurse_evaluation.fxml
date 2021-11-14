@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.NurseEvaluationController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.NurseEvaluationController">
    <children>
-      <TextField fx:id="tfBloodPressure" layoutX="49.0" layoutY="54.0" promptText="Blood Pressure" />
+      <TextField fx:id="tfSys" layoutX="49.0" layoutY="54.0" prefHeight="25.0" prefWidth="72.0" promptText="Systolic" />
       <Button fx:id="btnSubmit" layoutX="328.0" layoutY="147.0" mnemonicParsing="false" onAction="#submitEvaluation" text="Submit" />
+      <TextField fx:id="tfTemp" layoutX="49.0" layoutY="102.0" promptText="96.8" />
+      <TextField fx:id="tfRespiration" layoutX="48.0" layoutY="151.0" promptText="20" />
+      <TextField fx:id="tfPulse" layoutX="48.0" layoutY="200.0" promptText="100" />
+      <Label layoutX="225.0" layoutY="60.0" text="mmHg" />
+      <Label layoutX="225.0" layoutY="107.0" text="F" />
+      <TextField fx:id="tfDia" layoutX="147.0" layoutY="54.0" prefHeight="25.0" prefWidth="72.0" promptText="Diastolic" />
+      <Label layoutX="131.0" layoutY="60.0" text="/" />
+      <Label layoutX="49.0" layoutY="38.0" text="Blood Pressure" />
+      <Label layoutX="49.0" layoutY="86.0" text="Temperature" />
+      <Label layoutX="49.0" layoutY="135.0" text="Respiration" />
+      <Label layoutX="225.0" layoutY="156.0" text="per min" />
+      <Label layoutX="48.0" layoutY="184.0" text="Pulse" />
+      <Label layoutX="225.0" layoutY="205.0" text="per min" />
    </children>
 </AnchorPane>
