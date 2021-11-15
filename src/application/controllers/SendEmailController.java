@@ -36,6 +36,7 @@ public class SendEmailController {
     @FXML
     Button cancel;
 
+    // This function determines who is sending an email
     public void setData(User u) {
         System.out.println(u.getClass().toString());
         if(u.getClass().toString().equals("class application.model.Doctor")){
@@ -52,6 +53,7 @@ public class SendEmailController {
         }
     }
 
+    // This function cancels an email being sent
     public void cancel(ActionEvent event){
         SceneUtil s = new SceneUtil();
         if(p != null){
@@ -65,6 +67,7 @@ public class SendEmailController {
         }
     }
 
+    // This function sends an email
     public void sendEmail(ActionEvent event){
         Main main = new Main();
         main.sendEmail(to.getText(), subject.getText(), body.getText());
