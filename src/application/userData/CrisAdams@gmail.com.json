@@ -1,0 +1,74 @@
+{
+  "firstName": "Cris",
+  "lastName": "Adams",
+  "emailAddress": "CrisAdams@gmail.com",
+  "dateOfBirth": 1447311600000,
+  "evaluation": {
+    "bloodPressure": "",
+    "pulse": "",
+    "respirationRate": "",
+    "temperature": "",
+    "eyesNotes": "",
+    "earsNotes": "",
+    "heartNotes": "",
+    "reflexesNotes": "",
+    "reflexesAbnormal": false,
+    "noseNotes": "",
+    "throatNotes": "",
+    "breathingNotes": "",
+    "eyesAbnormal": false,
+    "earsAbnormal": false,
+    "heartAbnormal": false,
+    "noseAbnormal": false,
+    "throatAbnormal": false,
+    "breathingAbnormal": false
+  },
+  "assignedDoctor": "DonAdams@gmail.com",
+  "phoneNumber": "4809576890",
+  "address": "1915 W Cleveland AZ",
+  "previousVisits": [
+    1637218800000,
+    1637046000000
+  ],
+  "currentMedications": [
+    {
+      "name": "Licinipril",
+      "dosage": "50",
+      "unit": "mg"
+    },
+    {
+      "name": "Advil",
+      "dosage": "40",
+      "unit": "mg"
+    },
+    {
+      "name": "Tylenol",
+      "dosage": "30",
+      "unit": "mg"
+    },
+    {
+      "name": "Prozac",
+      "dosage": "",
+      "unit": "ml"
+    },
+    {
+      "name": "Meds",
+      "dosage": "50",
+      "unit": "ml"
+    }
+  ],
+  "insurance": {
+    "primaryHolder": "Cris Patterson",
+    "name": "Blue Cross Blue shield",
+    "number": "20923093939203",
+    "address": "50 Something, Boston MA"
+  },
+  "pharmacy": {
+    "name": "Walgreens",
+    "address": "Southern and Greenfield, Mesa AZ",
+    "phoneNumber": "123456789"
+  },
+  "password": "password",
+  "note": "hello world",
+  "history": []
+}

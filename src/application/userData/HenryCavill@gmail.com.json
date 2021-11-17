@@ -1,0 +1,74 @@
+{
+  "firstName": "Henry",
+  "lastName": "Cavill",
+  "emailAddress": "HenryCavill@gmail.com",
+  "dateOfBirth": 911458800000,
+  "evaluation": {
+    "bloodPressure": "",
+    "pulse": "",
+    "respirationRate": "",
+    "temperature": "",
+    "eyesNotes": "",
+    "earsNotes": "",
+    "heartNotes": "",
+    "reflexesAbnormal": false,
+    "noseNotes": "",
+    "throatNotes": "",
+    "breathingNotes": "",
+    "eyesAbnormal": false,
+    "earsAbnormal": false,
+    "heartAbnormal": false,
+    "noseAbnormal": false,
+    "throatAbnormal": false,
+    "breathingAbnormal": false
+  },
+  "assignedDoctor": "DonAdams@gmail.com",
+  "phoneNumber": "4809876859",
+  "address": "53 S Road, Hollywood CA",
+  "previousVisits": [
+    1637046000000,
+    1636441200000,
+    1636527600000
+  ],
+  "currentMedications": [
+    {
+      "name": "Licinipril",
+      "dosage": "30",
+      "unit": "mg"
+    },
+    {
+      "name": "",
+      "dosage": "",
+      "unit": ""
+    },
+    {
+      "name": "",
+      "dosage": "",
+      "unit": ""
+    },
+    {
+      "name": "",
+      "dosage": "",
+      "unit": ""
+    },
+    {
+      "name": "",
+      "dosage": "",
+      "unit": ""
+    }
+  ],
+  "insurance": {
+    "primaryHolder": "Henry",
+    "name": "Blue Cross Blue shield",
+    "number": "58585858585858",
+    "address": "54 S Big rd, Boston MA"
+  },
+  "pharmacy": {
+    "name": "CVS",
+    "address": "59483 S Greenfield rd, Mesa AZ 85206",
+    "phoneNumber": "58585858585"
+  },
+  "password": "henry",
+  "note": "",
+  "history": []
+}
